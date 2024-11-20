@@ -1,0 +1,14 @@
+build/
+.vscode/
+orig/
+*.nds
+*bios.bin
+/m2ctx
+*.sav
+*.xMAP
+objdiff.json
+/dsd
+/dsd.exe
+/dsd.pdb
+build.ninja
+.ninja_log
