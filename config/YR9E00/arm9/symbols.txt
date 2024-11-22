@@ -1029,7 +1029,7 @@ func_02027efc kind:function(arm,size=0x30) addr:0x2027efc
 DrHeap_CheckWork_Entry kind:function(arm,size=0x24) addr:0x2027f2c
 func_02027f50 kind:function(arm,size=0x58) addr:0x2027f50
 func_02027fa8 kind:function(arm,size=0x50) addr:0x2027fa8
-func_02027ff8 kind:function(arm,size=0x30) addr:0x2027ff8
+DrHeap_CheckWork_FileIDCheck kind:function(arm,size=0x30) addr:0x2027ff8
 func_02028028 kind:function(arm,size=0x34) addr:0x2028028
 func_0202805c kind:function(arm,size=0x38) addr:0x202805c
 func_02028094 kind:function(arm,size=0x18) addr:0x2028094
@@ -1392,7 +1392,7 @@ func_02032f50 kind:function(arm,size=0x64) addr:0x2032f50
 func_02032fb4 kind:function(arm,size=0x78) addr:0x2032fb4
 DrFS_OpdRead kind:function(arm,size=0x1c) addr:0x203302c
 DrFS_CsrRead kind:function(arm,size=0x2c) addr:0x2033048
-func_02033074 kind:function(arm,size=0x54) addr:0x2033074
+DrFS_FileRead_AllocHeap kind:function(arm,size=0x54) addr:0x2033074
 RawOpdData_Create kind:function(arm,size=0x118) addr:0x20330c8
 func_020331e0 kind:function(arm,size=0x4) addr:0x20331e0
 DrFSsub_FileInfoGetHeadAddr kind:function(arm,size=0x20) addr:0x20331e4
@@ -3482,7 +3482,7 @@ func_0209d0c0 kind:function(arm,size=0x10) addr:0x209d0c0
 func_0209d0d0 kind:function(arm,size=0x60) addr:0x209d0d0
 func_0209d130 kind:function(arm,size=0xc) addr:0x209d130
 func_0209d13c kind:function(arm,size=0xc) addr:0x209d13c
-func_0209d148 kind:function(arm,size=0x28) addr:0x209d148
+gAgbItemNameWinOpen kind:function(arm,size=0x28) addr:0x209d148
 func_0209d170 kind:function(arm,size=0x3c) addr:0x209d170
 func_0209d1ac kind:function(arm,size=0x1c) addr:0x209d1ac
 func_0209d1c8 kind:function(arm,size=0x28) addr:0x209d1c8
@@ -8243,7 +8243,6 @@ data_02100354 kind:bss addr:0x2100354
 data_02100364 kind:bss addr:0x2100364
 data_02100378 kind:bss addr:0x2100378
 data_02100388 kind:bss addr:0x2100388
-data_02100398 kind:bss addr:0x2100398
 data_021003cc kind:bss addr:0x21003cc
 data_021003d8 kind:bss addr:0x21003d8
 data_021003e8 kind:bss addr:0x21003e8

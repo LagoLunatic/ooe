@@ -8211,7 +8211,7 @@ from:0x02061dec kind:arm_call to:0x02033838 module:main
 from:0x02061e0c kind:arm_call to:0x02033838 module:main
 from:0x02061ec8 kind:arm_call to:0x020ad764 module:main
 from:0x02061f00 kind:load to:0x020ffc58 module:main
-from:0x02061f08 kind:load to:0x02100398 module:main
+from:0x02061f08 kind:load to:0x020ffc58 add:0x740 module:main
 from:0x02061f68 kind:arm_call to:0x0221b104 module:overlay(19)
 from:0x02061f9c kind:load to:0x020ffc58 module:main
 from:0x02061fa0 kind:load to:0x02061e28 module:main
@@ -8283,14 +8283,14 @@ from:0x02062e50 kind:arm_call to:0x02063804 module:main
 from:0x02062e5c kind:arm_call to:0x0209d148 module:main
 from:0x02062e6c kind:arm_call to:0x020635a4 module:main
 from:0x02062e84 kind:arm_call to:0x020aa508 module:main
-from:0x02062e90 kind:load to:0x02100398 module:main
+from:0x02062e90 kind:load to:0x020ffc58 add:0x740 module:main
 from:0x02062eac kind:load to:0x020627c4 module:main
 from:0x02062eb0 kind:load to:0x020f10f0 module:main
 from:0x02062eb4 kind:load to:0x020f10e8 module:main
 from:0x02062ec4 kind:arm_call to:0x02062c78 module:main
 from:0x02062f14 kind:arm_call to:0x0209d148 module:main
 from:0x02062f2c kind:arm_call to:0x020aa508 module:main
-from:0x02063000 kind:load to:0x02100398 module:main
+from:0x02063000 kind:load to:0x020ffc58 add:0x740 module:main
 from:0x02063008 kind:load to:0x020ffc58 module:main
 from:0x0206303c kind:arm_call to:0x020627c4 module:main
 from:0x02063044 kind:load to:0x020f111a module:main
@@ -8502,7 +8502,7 @@ from:0x020644b4 kind:load to:0x02028df4 module:main
 from:0x020644b8 kind:load to:0x020b6364 module:main
 from:0x020644bc kind:load to:0x020f3940 module:main
 from:0x020644c0 kind:load to:0x020f370c module:main
-from:0x020644c4 kind:load to:0x02100398 module:main
+from:0x020644c4 kind:load to:0x020ffc58 add:0x740 module:main
 from:0x020644c8 kind:load to:0x02064148 module:main
 from:0x020644cc kind:load to:0x020ffc58 module:main
 from:0x020645d4 kind:load to:0x020ffc58 module:main
@@ -9475,7 +9475,7 @@ from:0x0206db00 kind:arm_call to:0x02028d00 module:main
 from:0x0206db34 kind:arm_call to:0x02028d00 module:main
 from:0x0206db88 kind:load to:0x020ffc58 module:main
 from:0x0206db8c kind:load to:0x020ecc18 module:main
-from:0x0206db98 kind:load to:0x02100398 module:main
+from:0x0206db98 kind:load to:0x020ffc58 add:0x740 module:main
 from:0x0206db9c kind:load to:0x02100258 module:main
 from:0x0206dbb4 kind:arm_call to:0x0206a764 module:main
 from:0x0206dbd0 kind:arm_call to:0x020331e4 module:main
