@@ -12,3 +12,5 @@ objdiff.json
 /dsd.pdb
 build.ninja
 .ninja_log
+ghidra/exports
+ghidra/*$py.class
