@@ -233,7 +233,7 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, game_build: Path, game_confi
     )
     n.newline()
 
-    rom_file = f"{game_version}.nds"
+    rom_file = str(game_build / f"{game_version}.nds")
     n.build(
         inputs=[rom_config_file],
         rule="rom_build",
