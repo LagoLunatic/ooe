@@ -1,7 +1,7 @@
 func_ov071_022c1fe0 kind:function(arm,size=0xc) addr:0x22c1fe0
 func_ov071_022c1fec kind:function(arm,size=0x18) addr:0x22c1fec
-func_ov071_022c2004 kind:function(arm,size=0x1dc) addr:0x22c2004
-func_ov071_022c21e0 kind:function(arm,size=0xa0) addr:0x22c21e0
+DevMvCloudInit kind:function(arm,size=0x1dc) addr:0x22c2004
+DevMvCloud kind:function(arm,size=0xa0) addr:0x22c21e0
 data_ov071_022c2280 kind:data(any) addr:0x22c2280 ambiguous
 data_ov071_022c2284 kind:data(any) addr:0x22c2284 ambiguous
 data_ov071_022c2290 kind:data(any) addr:0x22c2290 ambiguous

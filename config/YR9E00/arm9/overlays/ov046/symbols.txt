@@ -1,10 +1,10 @@
 func_ov046_022c1fe0 kind:function(arm,size=0x7d0) addr:0x22c1fe0
-func_ov046_022c27b0 kind:function(arm,size=0xe0) addr:0x22c27b0
-func_ov046_022c2890 kind:function(arm,size=0x198) addr:0x22c2890
+DevSeaSurfaceInit kind:function(arm,size=0xe0) addr:0x22c27b0
+DevSeaSurface kind:function(arm,size=0x198) addr:0x22c2890
 func_ov046_022c2a28 kind:function(arm,size=0x54) addr:0x22c2a28
 func_ov046_022c2a7c kind:function(arm,size=0x30) addr:0x22c2a7c
-func_ov046_022c2aac kind:function(arm,size=0x224) addr:0x22c2aac
-func_ov046_022c2cd0 kind:function(arm,size=0x284) addr:0x22c2cd0
+DevMapModelDAAInit kind:function(arm,size=0x224) addr:0x22c2aac
+DevMapModelDAA kind:function(arm,size=0x284) addr:0x22c2cd0
 func_ov046_022c2f54 kind:function(arm,size=0x1ac) addr:0x22c2f54
 func_ov046_022c3100 kind:function(arm,size=0x74) addr:0x22c3100
 func_ov046_022c3174 kind:function(arm,size=0x1b0) addr:0x22c3174
@@ -19,10 +19,10 @@ func_ov046_022c3b18 kind:function(arm,size=0x74) addr:0x22c3b18
 func_ov046_022c3b8c kind:function(arm,size=0xcc) addr:0x22c3b8c
 func_ov046_022c3c58 kind:function(arm,size=0x190) addr:0x22c3c58
 func_ov046_022c3de8 kind:function(arm,size=0xc) addr:0x22c3de8
-func_ov046_022c3df4 kind:function(arm,size=0x160) addr:0x22c3df4
-func_ov046_022c3f54 kind:function(arm,size=0x1dc) addr:0x22c3f54
-func_ov046_022c4130 kind:function(arm,size=0x4) addr:0x22c4130
-func_ov046_022c4134 kind:function(arm,size=0xd8) addr:0x22c4134
+DevSeaRockWall kind:function(arm,size=0x160) addr:0x22c3df4
+DevSeaRockWallInit kind:function(arm,size=0x1dc) addr:0x22c3f54
+DevSeaBottomFloor kind:function(arm,size=0x4) addr:0x22c4130
+DevSeaBottomFloorInit kind:function(arm,size=0xd8) addr:0x22c4134
 data_ov046_022c420c kind:data(any) addr:0x22c420c
 data_ov046_022c433c kind:data(any) addr:0x22c433c ambiguous
 data_ov046_022c43b4 kind:data(any) addr:0x22c43b4 ambiguous

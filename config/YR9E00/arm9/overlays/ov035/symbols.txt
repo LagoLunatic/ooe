@@ -28,8 +28,8 @@ func_ov035_022b935c kind:function(arm,size=0x168) addr:0x22b935c
 func_ov035_022b94c4 kind:function(arm,size=0xb4) addr:0x22b94c4
 func_ov035_022b9578 kind:function(arm,size=0x2d8) addr:0x22b9578
 func_ov035_022b9850 kind:function(arm,size=0xcc) addr:0x22b9850
-func_ov035_022b991c kind:function(arm,size=0x12c) addr:0x22b991c
-func_ov035_022b9a48 kind:function(arm,size=0x22c) addr:0x22b9a48
+Enemy310Main kind:function(arm,size=0x12c) addr:0x22b991c
+Enemy310Init kind:function(arm,size=0x22c) addr:0x22b9a48
 data_ov035_022b9c74 kind:data(any) addr:0x22b9c74
 data_ov035_022b9cf8 kind:data(any) addr:0x22b9cf8
 data_ov035_022b9d20 kind:data(any) addr:0x22b9d20

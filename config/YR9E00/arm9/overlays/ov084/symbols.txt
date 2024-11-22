@@ -1,7 +1,7 @@
 func_ov084_022c1fe0 kind:function(arm,size=0x160) addr:0x22c1fe0
 func_ov084_022c2140 kind:function(arm,size=0xf4) addr:0x22c2140
-func_ov084_022c2234 kind:function(arm,size=0x398) addr:0x22c2234
-func_ov084_022c25cc kind:function(arm,size=0x188) addr:0x22c25cc
+DevCastle kind:function(arm,size=0x398) addr:0x22c2234
+DevCastleInit kind:function(arm,size=0x188) addr:0x22c25cc
 func_ov084_022c2754 kind:function(arm,size=0xb0) addr:0x22c2754
 func_ov084_022c2804 kind:function(arm,size=0x20) addr:0x22c2804
 func_ov084_022c2824 kind:function(arm,size=0x18) addr:0x22c2824

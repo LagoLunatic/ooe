@@ -1,6 +1,6 @@
 func_ov040_022c1fe0 kind:function(arm,size=0x6c8) addr:0x22c1fe0
-func_ov040_022c26a8 kind:function(arm,size=0x3f8) addr:0x22c26a8
-func_ov040_022c2aa0 kind:function(arm,size=0x1ac) addr:0x22c2aa0
+DevHouseExit kind:function(arm,size=0x3f8) addr:0x22c26a8
+DevHouseExitInit kind:function(arm,size=0x1ac) addr:0x22c2aa0
 data_ov040_022c2c4c kind:data(any) addr:0x22c2c4c
 data_ov040_022c2c50 kind:data(any) addr:0x22c2c50 ambiguous
 data_ov040_022c2c5c kind:data(any) addr:0x22c2c5c

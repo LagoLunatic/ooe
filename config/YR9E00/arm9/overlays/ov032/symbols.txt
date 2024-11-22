@@ -56,8 +56,8 @@ func_ov032_022bbbf0 kind:function(arm,size=0x48) addr:0x22bbbf0
 func_ov032_022bbc38 kind:function(arm,size=0x44) addr:0x22bbc38
 func_ov032_022bbc7c kind:function(arm,size=0xac) addr:0x22bbc7c
 func_ov032_022bbd28 kind:function(arm,size=0x40c) addr:0x22bbd28
-func_ov032_022bc134 kind:function(arm,size=0x2c0) addr:0x22bc134
-func_ov032_022bc3f4 kind:function(arm,size=0x1bc) addr:0x22bc3f4
+Enemy235Init kind:function(arm,size=0x2c0) addr:0x22bc134
+Enemy235Main kind:function(arm,size=0x1bc) addr:0x22bc3f4
 data_ov032_022bc5b0 kind:data(any) addr:0x22bc5b0
 data_ov032_022bc5c0 kind:data(any) addr:0x22bc5c0
 data_ov032_022bc7e0 kind:data(any) addr:0x22bc7e0

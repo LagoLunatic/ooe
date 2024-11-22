@@ -17,8 +17,8 @@ func_ov063_022c2a18 kind:function(arm,size=0x8) addr:0x22c2a18
 func_ov063_022c2a20 kind:function(arm,size=0x11c) addr:0x22c2a20
 func_ov063_022c2b3c kind:function(arm,size=0x8) addr:0x22c2b3c
 func_ov063_022c2b44 kind:function(arm,size=0x610) addr:0x22c2b44
-func_ov063_022c3154 kind:function(arm,size=0x620) addr:0x22c3154
-func_ov063_022c3774 kind:function(arm,size=0x20c) addr:0x22c3774
+DevRaiseFloor kind:function(arm,size=0x620) addr:0x22c3154
+DevRaiseFloorInit kind:function(arm,size=0x20c) addr:0x22c3774
 data_ov063_022c3980 kind:data(any) addr:0x22c3980
 data_ov063_022c3990 kind:data(any) addr:0x22c3990
 data_ov063_022c39a4 kind:data(any) addr:0x22c39a4 ambiguous

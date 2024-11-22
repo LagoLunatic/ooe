@@ -1,6 +1,6 @@
 func_ov076_022c1fe0 kind:function(arm,size=0x74) addr:0x22c1fe0
-func_ov076_022c2054 kind:function(arm,size=0xc) addr:0x22c2054
-func_ov076_022c2060 kind:function(arm,size=0x7c) addr:0x22c2060
+DevCentRoomFire kind:function(arm,size=0xc) addr:0x22c2054
+DevCentRoomFireInit kind:function(arm,size=0x7c) addr:0x22c2060
 data_ov076_022c20dc kind:data(any) addr:0x22c20dc
 data_ov076_022c20ec kind:data(any) addr:0x22c20ec
 data_ov076_022c2100 kind:data(any) addr:0x22c2100 ambiguous

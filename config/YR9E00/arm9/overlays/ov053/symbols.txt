@@ -1,5 +1,5 @@
-func_ov053_022c1fe0 kind:function(arm,size=0x34) addr:0x22c1fe0
-func_ov053_022c2014 kind:function(arm,size=0xf0) addr:0x22c2014
+EvScene08_00_Init kind:function(arm,size=0x34) addr:0x22c1fe0
+EvScene08_00 kind:function(arm,size=0xf0) addr:0x22c2014
 func_ov053_022c2104 kind:function(arm,size=0x1ac) addr:0x22c2104
 func_ov053_022c22b0 kind:function(arm,size=0x650) addr:0x22c22b0
 func_ov053_022c2900 kind:function(arm,size=0x1a4) addr:0x22c2900
@@ -13,13 +13,13 @@ func_ov053_022c3308 kind:function(arm,size=0xb4) addr:0x22c3308
 func_ov053_022c33bc kind:function(arm,size=0x170) addr:0x22c33bc
 func_ov053_022c352c kind:function(arm,size=0xa0) addr:0x22c352c
 func_ov053_022c35cc kind:function(arm,size=0x1dc) addr:0x22c35cc
-func_ov053_022c37a8 kind:function(arm,size=0x1fc) addr:0x22c37a8
-func_ov053_022c39a4 kind:function(arm,size=0x708) addr:0x22c39a4
+DevLightHouse kind:function(arm,size=0x1fc) addr:0x22c37a8
+DevLightHouseInit kind:function(arm,size=0x708) addr:0x22c39a4
 func_ov053_022c40ac kind:function(arm,size=0x138) addr:0x22c40ac
 func_ov053_022c41e4 kind:function(arm,size=0x3dc) addr:0x22c41e4
 func_ov053_022c45c0 kind:function(arm,size=0x1f4) addr:0x22c45c0
-func_ov053_022c47b4 kind:function(arm,size=0xc) addr:0x22c47b4
-func_ov053_022c47c0 kind:function(arm,size=0x118) addr:0x22c47c0
+DevToudaiLight kind:function(arm,size=0xc) addr:0x22c47b4
+DevToudaiLightInit kind:function(arm,size=0x118) addr:0x22c47c0
 data_ov053_022c48d8 kind:data(any) addr:0x22c48d8
 data_ov053_022c4ae8 kind:data(any) addr:0x22c4ae8 ambiguous
 data_ov053_022c4b68 kind:data(any) addr:0x22c4b68 ambiguous

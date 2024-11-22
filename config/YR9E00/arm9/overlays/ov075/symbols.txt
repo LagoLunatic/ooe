@@ -1,5 +1,5 @@
-func_ov075_022c1fe0 kind:function(arm,size=0xa0) addr:0x22c1fe0
-func_ov075_022c2080 kind:function(arm,size=0x264) addr:0x22c2080
+EvScene24_00_Init kind:function(arm,size=0xa0) addr:0x22c1fe0
+EvScene24_00 kind:function(arm,size=0x264) addr:0x22c2080
 func_ov075_022c22e4 kind:function(arm,size=0xf8) addr:0x22c22e4
 func_ov075_022c23dc kind:function(arm,size=0xcc) addr:0x22c23dc
 func_ov075_022c24a8 kind:function(arm,size=0xbc) addr:0x22c24a8
@@ -15,8 +15,8 @@ func_ov075_022c36e0 kind:function(arm,size=0xb4) addr:0x22c36e0
 func_ov075_022c3794 kind:function(arm,size=0x688) addr:0x22c3794
 func_ov075_022c3e1c kind:function(arm,size=0xe4) addr:0x22c3e1c
 func_ov075_022c3f00 kind:function(arm,size=0x26c) addr:0x22c3f00
-func_ov075_022c416c kind:function(arm,size=0x28) addr:0x22c416c
-func_ov075_022c4194 kind:function(arm,size=0x28) addr:0x22c4194
+EvScene25_00_Init kind:function(arm,size=0x28) addr:0x22c416c
+EvScene25_00 kind:function(arm,size=0x28) addr:0x22c4194
 data_ov075_022c41bc kind:data(any) addr:0x22c41bc
 data_ov075_022c41cc kind:data(any) addr:0x22c41cc
 data_ov075_022c433c kind:data(any) addr:0x22c433c ambiguous

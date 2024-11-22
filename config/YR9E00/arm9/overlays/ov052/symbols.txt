@@ -1,7 +1,7 @@
 func_ov052_022c1fe0 kind:function(arm,size=0x18) addr:0x22c1fe0
-func_ov052_022c1ff8 kind:function(arm,size=0x310) addr:0x22c1ff8
+DevElectric kind:function(arm,size=0x310) addr:0x22c1ff8
 func_ov052_022c2308 kind:function(arm,size=0xec) addr:0x22c2308
-func_ov052_022c23f4 kind:function(arm,size=0x294) addr:0x22c23f4
+DevElectricInit kind:function(arm,size=0x294) addr:0x22c23f4
 data_ov052_022c2688 kind:data(any) addr:0x22c2688 ambiguous
 data_ov052_022c26a8 kind:data(any) addr:0x22c26a8 ambiguous
 data_ov052_022c26f0 kind:data(any) addr:0x22c26f0 ambiguous

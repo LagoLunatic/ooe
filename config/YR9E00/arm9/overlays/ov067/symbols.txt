@@ -2,10 +2,10 @@ func_ov067_022c1fe0 kind:function(arm,size=0x2b8) addr:0x22c1fe0
 func_ov067_022c2298 kind:function(arm,size=0x140) addr:0x22c2298
 func_ov067_022c23d8 kind:function(arm,size=0x18) addr:0x22c23d8
 func_ov067_022c23f0 kind:function(arm,size=0x60) addr:0x22c23f0
-func_ov067_022c2450 kind:function(arm,size=0x90) addr:0x22c2450
-func_ov067_022c24e0 kind:function(arm,size=0xb0) addr:0x22c24e0
-func_ov067_022c2590 kind:function(arm,size=0x90) addr:0x22c2590
-func_ov067_022c2620 kind:function(arm,size=0x11c) addr:0x22c2620
+EvScene22_00_Init kind:function(arm,size=0x90) addr:0x22c2450
+EvScene22_00 kind:function(arm,size=0xb0) addr:0x22c24e0
+EvScene22_01_Init kind:function(arm,size=0x90) addr:0x22c2590
+EvScene22_01 kind:function(arm,size=0x11c) addr:0x22c2620
 data_ov067_022c273c kind:data(any) addr:0x22c273c
 data_ov067_022c2790 kind:data(any) addr:0x22c2790 ambiguous
 data_ov067_022c27b0 kind:data(any) addr:0x22c27b0 ambiguous

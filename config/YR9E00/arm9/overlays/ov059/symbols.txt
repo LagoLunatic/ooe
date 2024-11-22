@@ -1,5 +1,5 @@
-func_ov059_022c1fe0 kind:function(arm,size=0x84) addr:0x22c1fe0
-func_ov059_022c2064 kind:function(arm,size=0x5cc) addr:0x22c2064
+EvScene11_00_Init kind:function(arm,size=0x84) addr:0x22c1fe0
+EvScene11_00 kind:function(arm,size=0x5cc) addr:0x22c2064
 data_ov059_022c2630 kind:data(any) addr:0x22c2630
 data_ov059_022c2640 kind:data(any) addr:0x22c2640
 data_ov059_022c2644 kind:data(any) addr:0x22c2644 ambiguous

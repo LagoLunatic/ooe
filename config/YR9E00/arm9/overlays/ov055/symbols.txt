@@ -1,14 +1,14 @@
 func_ov055_022c1fe0 kind:function(arm,size=0xf4) addr:0x22c1fe0
 func_ov055_022c20d4 kind:function(arm,size=0xd0) addr:0x22c20d4
 func_ov055_022c21a4 kind:function(arm,size=0x64) addr:0x22c21a4
-func_ov055_022c2208 kind:function(arm,size=0x14c) addr:0x22c2208
-func_ov055_022c2354 kind:function(arm,size=0xe4) addr:0x22c2354
+DevLimestone kind:function(arm,size=0x14c) addr:0x22c2208
+DevLimestoneInit kind:function(arm,size=0xe4) addr:0x22c2354
 func_ov055_022c2438 kind:function(arm,size=0x88) addr:0x22c2438
 func_ov055_022c24c0 kind:function(arm,size=0x78) addr:0x22c24c0
 func_ov055_022c2538 kind:function(arm,size=0x120) addr:0x22c2538
 func_ov055_022c2658 kind:function(arm,size=0x138) addr:0x22c2658
-func_ov055_022c2790 kind:function(arm,size=0xe0) addr:0x22c2790
-func_ov055_022c2870 kind:function(arm,size=0xb4) addr:0x22c2870
+DevWind kind:function(arm,size=0xe0) addr:0x22c2790
+DevWindInit kind:function(arm,size=0xb4) addr:0x22c2870
 data_ov055_022c2924 kind:data(any) addr:0x22c2924
 data_ov055_022c2928 kind:data(any) addr:0x22c2928 ambiguous
 data_ov055_022c29a0 kind:data(any) addr:0x22c29a0 ambiguous

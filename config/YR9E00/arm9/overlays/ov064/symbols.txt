@@ -1,7 +1,7 @@
-func_ov064_022c1fe0 kind:function(arm,size=0xf4) addr:0x22c1fe0
-func_ov064_022c20d4 kind:function(arm,size=0x400) addr:0x22c20d4
-func_ov064_022c24d4 kind:function(arm,size=0x108) addr:0x22c24d4
-func_ov064_022c25dc kind:function(arm,size=0xc) addr:0x22c25dc
+EvScene09_00_Init kind:function(arm,size=0xf4) addr:0x22c1fe0
+EvScene09_00 kind:function(arm,size=0x400) addr:0x22c20d4
+EvScene09_01_Init kind:function(arm,size=0x108) addr:0x22c24d4
+EvScene09_01 kind:function(arm,size=0xc) addr:0x22c25dc
 data_ov064_022c25e8 kind:data(any) addr:0x22c25e8
 data_ov064_022c25ec kind:data(any) addr:0x22c25ec ambiguous
 data_ov064_022c25f8 kind:data(any) addr:0x22c25f8

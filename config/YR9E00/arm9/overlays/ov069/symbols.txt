@@ -1,8 +1,8 @@
 func_ov069_022c1fe0 kind:function(arm,size=0x14c) addr:0x22c1fe0
 func_ov069_022c212c kind:function(arm,size=0xb8) addr:0x22c212c
 func_ov069_022c21e4 kind:function(arm,size=0xa0) addr:0x22c21e4
-func_ov069_022c2284 kind:function(arm,size=0x154) addr:0x22c2284
-func_ov069_022c23d8 kind:function(arm,size=0x4c) addr:0x22c23d8
+DevPaperFloor kind:function(arm,size=0x154) addr:0x22c2284
+DevPaperFloorInit kind:function(arm,size=0x4c) addr:0x22c23d8
 data_ov069_022c2424 kind:data(any) addr:0x22c2424
 data_ov069_022c242c kind:data(any) addr:0x22c242c ambiguous
 data_ov069_022c2430 kind:data(any) addr:0x22c2430 ambiguous

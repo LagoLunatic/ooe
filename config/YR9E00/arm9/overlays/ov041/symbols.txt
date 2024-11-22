@@ -1,15 +1,15 @@
 func_ov041_022c1fe0 kind:function(arm,size=0xc) addr:0x22c1fe0
-func_ov041_022c1fec kind:function(arm,size=0x218) addr:0x22c1fec
-func_ov041_022c2204 kind:function(arm,size=0x1d4) addr:0x22c2204
+DevHouseEnter kind:function(arm,size=0x218) addr:0x22c1fec
+DevHouseEnterInit kind:function(arm,size=0x1d4) addr:0x22c2204
 func_ov041_022c23d8 kind:function(arm,size=0x54) addr:0x22c23d8
-func_ov041_022c242c kind:function(arm,size=0x4) addr:0x22c242c
-func_ov041_022c2430 kind:function(arm,size=0x7c) addr:0x22c2430
-func_ov041_022c24ac kind:function(arm,size=0xb0) addr:0x22c24ac
-func_ov041_022c255c kind:function(arm,size=0x194) addr:0x22c255c
-func_ov041_022c26f0 kind:function(arm,size=0x10c) addr:0x22c26f0
-func_ov041_022c27fc kind:function(arm,size=0x3fc) addr:0x22c27fc
-func_ov041_022c2bf8 kind:function(arm,size=0xf4) addr:0x22c2bf8
-func_ov041_022c2cec kind:function(arm,size=0xc) addr:0x22c2cec
+DevVillageBg kind:function(arm,size=0x4) addr:0x22c242c
+DevVillageBgInit kind:function(arm,size=0x7c) addr:0x22c2430
+EvScene10_00_Init kind:function(arm,size=0xb0) addr:0x22c24ac
+EvScene10_00 kind:function(arm,size=0x194) addr:0x22c255c
+EvScene05_00_Init kind:function(arm,size=0x10c) addr:0x22c26f0
+EvScene05_00 kind:function(arm,size=0x3fc) addr:0x22c27fc
+EvScene05_01_Init kind:function(arm,size=0xf4) addr:0x22c2bf8
+EvScene05_01 kind:function(arm,size=0xc) addr:0x22c2cec
 data_ov041_022c2cf8 kind:data(any) addr:0x22c2cf8
 data_ov041_022c2e68 kind:data(any) addr:0x22c2e68 ambiguous
 data_ov041_022c2f04 kind:data(any) addr:0x22c2f04 ambiguous

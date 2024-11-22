@@ -1,7 +1,7 @@
 func_ov065_022c1fe0 kind:function(arm,size=0x2c4) addr:0x22c1fe0
 func_ov065_022c22a4 kind:function(arm,size=0x3a0) addr:0x22c22a4
-func_ov065_022c2644 kind:function(arm,size=0xc0) addr:0x22c2644
-func_ov065_022c2704 kind:function(arm,size=0x294) addr:0x22c2704
+DevCurtain kind:function(arm,size=0xc0) addr:0x22c2644
+DevCurtainInit kind:function(arm,size=0x294) addr:0x22c2704
 data_ov065_022c2998 kind:data(any) addr:0x22c2998
 data_ov065_022c29a0 kind:data(any) addr:0x22c29a0 ambiguous
 data_ov065_022c29a8 kind:data(any) addr:0x22c29a8

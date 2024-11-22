@@ -1,11 +1,11 @@
 func_ov072_022c1fe0 kind:function(arm,size=0x94) addr:0x22c1fe0
 func_ov072_022c2074 kind:function(arm,size=0x128) addr:0x22c2074
 func_ov072_022c219c kind:function(arm,size=0xf8) addr:0x22c219c
-func_ov072_022c2294 kind:function(arm,size=0x17c) addr:0x22c2294
-func_ov072_022c2410 kind:function(arm,size=0x8c) addr:0x22c2410
+DevThunderShutter kind:function(arm,size=0x17c) addr:0x22c2294
+DevThunderShutterInit kind:function(arm,size=0x8c) addr:0x22c2410
 func_ov072_022c249c kind:function(arm,size=0x24) addr:0x22c249c
-func_ov072_022c24c0 kind:function(arm,size=0xb8) addr:0x22c24c0
-func_ov072_022c2578 kind:function(arm,size=0xac) addr:0x22c2578
+DevMawaruSora kind:function(arm,size=0xb8) addr:0x22c24c0
+DevMawaruSoraInit kind:function(arm,size=0xac) addr:0x22c2578
 data_ov072_022c2624 kind:data(any) addr:0x22c2624
 data_ov072_022c2634 kind:data(any) addr:0x22c2634
 data_ov072_022c2644 kind:data(any) addr:0x22c2644 ambiguous

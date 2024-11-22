@@ -7,19 +7,19 @@ func_ov057_022c2178 kind:function(arm,size=0x74) addr:0x22c2178
 func_ov057_022c21ec kind:function(arm,size=0xc) addr:0x22c21ec
 func_ov057_022c21f8 kind:function(arm,size=0xc) addr:0x22c21f8
 func_ov057_022c2204 kind:function(arm,size=0x18) addr:0x22c2204
-func_ov057_022c221c kind:function(arm,size=0x328) addr:0x22c221c
-func_ov057_022c2544 kind:function(arm,size=0x70c) addr:0x22c2544
-func_ov057_022c2c50 kind:function(arm,size=0x2b4) addr:0x22c2c50
-func_ov057_022c2f04 kind:function(arm,size=0x42c) addr:0x22c2f04
+DevFallIce0_Init kind:function(arm,size=0x328) addr:0x22c221c
+DevFallIce0 kind:function(arm,size=0x70c) addr:0x22c2544
+DevFallIce1_Init kind:function(arm,size=0x2b4) addr:0x22c2c50
+DevFallIce1 kind:function(arm,size=0x42c) addr:0x22c2f04
 func_ov057_022c3330 kind:function(arm,size=0x1a4) addr:0x22c3330
 func_ov057_022c34d4 kind:function(arm,size=0x40) addr:0x22c34d4
 func_ov057_022c3514 kind:function(arm,size=0x278) addr:0x22c3514
-func_ov057_022c378c kind:function(arm,size=0x118) addr:0x22c378c
-func_ov057_022c38a4 kind:function(arm,size=0xb0) addr:0x22c38a4
-func_ov057_022c3954 kind:function(arm,size=0x120) addr:0x22c3954
-func_ov057_022c3a74 kind:function(arm,size=0xb8) addr:0x22c3a74
-func_ov057_022c3b2c kind:function(arm,size=0x4) addr:0x22c3b2c
-func_ov057_022c3b30 kind:function(arm,size=0x1a4) addr:0x22c3b30
+DevFallSplash0_Init kind:function(arm,size=0x118) addr:0x22c378c
+DevFallSplash0 kind:function(arm,size=0xb0) addr:0x22c38a4
+DevFallSplash1_Init kind:function(arm,size=0x120) addr:0x22c3954
+DevFallSplash1 kind:function(arm,size=0xb8) addr:0x22c3a74
+DevWaterFallInit kind:function(arm,size=0x4) addr:0x22c3b2c
+DevWaterFall kind:function(arm,size=0x1a4) addr:0x22c3b30
 data_ov057_022c3cd4 kind:data(any) addr:0x22c3cd4
 data_ov057_022c3df4 kind:data(any) addr:0x22c3df4 ambiguous
 data_ov057_022c3f54 kind:data(any) addr:0x22c3f54 ambiguous

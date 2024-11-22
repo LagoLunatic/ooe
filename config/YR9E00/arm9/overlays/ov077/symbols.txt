@@ -2,8 +2,8 @@ func_ov077_022c1fe0 kind:function(arm,size=0x34) addr:0x22c1fe0
 func_ov077_022c2014 kind:function(arm,size=0x20) addr:0x22c2014
 func_ov077_022c2034 kind:function(arm,size=0x18) addr:0x22c2034
 func_ov077_022c204c kind:function(arm,size=0xb4) addr:0x22c204c
-func_ov077_022c2100 kind:function(arm,size=0x190) addr:0x22c2100
-func_ov077_022c2290 kind:function(arm,size=0x13c) addr:0x22c2290
+DevCerberusRoom kind:function(arm,size=0x190) addr:0x22c2100
+DevCerberusRoomInit kind:function(arm,size=0x13c) addr:0x22c2290
 data_ov077_022c23cc kind:data(any) addr:0x22c23cc ambiguous
 data_ov077_022c23d8 kind:data(any) addr:0x22c23d8 ambiguous
 data_ov077_022c23dc kind:data(any) addr:0x22c23dc ambiguous

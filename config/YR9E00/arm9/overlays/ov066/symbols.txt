@@ -1,8 +1,8 @@
 func_ov066_022c1fe0 kind:function(arm,size=0xd0) addr:0x22c1fe0
 func_ov066_022c20b0 kind:function(arm,size=0x13c) addr:0x22c20b0
 func_ov066_022c21ec kind:function(arm,size=0x94) addr:0x22c21ec
-func_ov066_022c2280 kind:function(arm,size=0xbc) addr:0x22c2280
-func_ov066_022c233c kind:function(arm,size=0xf8) addr:0x22c233c
+DevSwitchEntrance kind:function(arm,size=0xbc) addr:0x22c2280
+DevSwitchEntranceInit kind:function(arm,size=0xf8) addr:0x22c233c
 data_ov066_022c2434 kind:data(any) addr:0x22c2434
 data_ov066_022c2444 kind:data(any) addr:0x22c2444
 data_ov066_022c2450 kind:data(any) addr:0x22c2450 ambiguous

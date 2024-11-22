@@ -2,12 +2,12 @@ func_ov068_022c1fe0 kind:function(arm,size=0x70) addr:0x22c1fe0
 func_ov068_022c2050 kind:function(arm,size=0x1d8) addr:0x22c2050
 func_ov068_022c2228 kind:function(arm,size=0x19c) addr:0x22c2228
 func_ov068_022c23c4 kind:function(arm,size=0x18) addr:0x22c23c4
-func_ov068_022c23dc kind:function(arm,size=0x7ac) addr:0x22c23dc
+DevRockBall kind:function(arm,size=0x7ac) addr:0x22c23dc
 func_ov068_022c2b88 kind:function(arm,size=0x8c) addr:0x22c2b88
-func_ov068_022c2c14 kind:function(arm,size=0x224) addr:0x22c2c14
+DevRockBallInit kind:function(arm,size=0x224) addr:0x22c2c14
 func_ov068_022c2e38 kind:function(arm,size=0x148) addr:0x22c2e38
-func_ov068_022c2f80 kind:function(arm,size=0x114) addr:0x22c2f80
-func_ov068_022c3094 kind:function(arm,size=0x4) addr:0x22c3094
+DevCndlLightInit kind:function(arm,size=0x114) addr:0x22c2f80
+DevCndlLight kind:function(arm,size=0x4) addr:0x22c3094
 data_ov068_022c3098 kind:data(any) addr:0x22c3098 ambiguous
 data_ov068_022c3108 kind:data(any) addr:0x22c3108 ambiguous
 data_ov068_022c3154 kind:data(any) addr:0x22c3154 ambiguous

@@ -1,5 +1,5 @@
-func_ov043_022c1fe0 kind:function(arm,size=0x18) addr:0x22c1fe0
-func_ov043_022c1ff8 kind:function(arm,size=0xa0) addr:0x22c1ff8
+DevLimitInit kind:function(arm,size=0x18) addr:0x22c1fe0
+DevLimit kind:function(arm,size=0xa0) addr:0x22c1ff8
 data_ov043_022c2098 kind:data(any) addr:0x22c2098
 data_ov043_022c20b8 kind:data(any) addr:0x22c20b8 ambiguous
 data_ov043_022c20d4 kind:data(any) addr:0x22c20d4 ambiguous

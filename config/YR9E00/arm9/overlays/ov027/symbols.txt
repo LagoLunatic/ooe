@@ -38,8 +38,8 @@ func_ov027_022ba0e4 kind:function(arm,size=0x11c) addr:0x22ba0e4
 func_ov027_022ba200 kind:function(arm,size=0x24) addr:0x22ba200
 func_ov027_022ba224 kind:function(arm,size=0xc) addr:0x22ba224
 func_ov027_022ba230 kind:function(arm,size=0x48) addr:0x22ba230
-func_ov027_022ba278 kind:function(arm,size=0x13a4) addr:0x22ba278
-func_ov027_022bb61c kind:function(arm,size=0x1f8) addr:0x22bb61c
+Enemy146Main kind:function(arm,size=0x13a4) addr:0x22ba278
+Enemy146Init kind:function(arm,size=0x1f8) addr:0x22bb61c
 data_ov027_022bb814 kind:data(any) addr:0x22bb814
 data_ov027_022bb858 kind:data(any) addr:0x22bb858
 data_ov027_022bb91c kind:data(any) addr:0x22bb91c

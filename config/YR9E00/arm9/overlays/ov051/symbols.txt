@@ -1,12 +1,12 @@
-func_ov051_022c1fe0 kind:function(arm,size=0x84) addr:0x22c1fe0
-func_ov051_022c2064 kind:function(arm,size=0x5e0) addr:0x22c2064
+EvScene06_00_Init kind:function(arm,size=0x84) addr:0x22c1fe0
+EvScene06_00 kind:function(arm,size=0x5e0) addr:0x22c2064
 func_ov051_022c2644 kind:function(arm,size=0x30) addr:0x22c2644
 func_ov051_022c2674 kind:function(arm,size=0x54) addr:0x22c2674
 func_ov051_022c26c8 kind:function(arm,size=0x6c) addr:0x22c26c8
 func_ov051_022c2734 kind:function(arm,size=0x384) addr:0x22c2734
 func_ov051_022c2ab8 kind:function(arm,size=0xa0) addr:0x22c2ab8
-func_ov051_022c2b58 kind:function(arm,size=0x38) addr:0x22c2b58
-func_ov051_022c2b90 kind:function(arm,size=0xc4) addr:0x22c2b90
+DevIronMaiden kind:function(arm,size=0x38) addr:0x22c2b58
+DevIronMaidenInit kind:function(arm,size=0xc4) addr:0x22c2b90
 data_ov051_022c2c54 kind:data(any) addr:0x22c2c54
 data_ov051_022c2c64 kind:data(any) addr:0x22c2c64
 data_ov051_022c2cd0 kind:data(any) addr:0x22c2cd0 ambiguous

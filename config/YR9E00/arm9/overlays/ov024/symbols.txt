@@ -23,8 +23,8 @@ func_ov024_022b86e4 kind:function(arm,size=0x218) addr:0x22b86e4
 func_ov024_022b88fc kind:function(arm,size=0x34) addr:0x22b88fc
 func_ov024_022b8930 kind:function(arm,size=0x64) addr:0x22b8930
 func_ov024_022b8994 kind:function(arm,size=0x18) addr:0x22b8994
-func_ov024_022b89ac kind:function(arm,size=0x1810) addr:0x22b89ac
-func_ov024_022ba1bc kind:function(arm,size=0x2d4) addr:0x22ba1bc
+Enemy123Main kind:function(arm,size=0x1810) addr:0x22b89ac
+Enemy123Init kind:function(arm,size=0x2d4) addr:0x22ba1bc
 data_ov024_022ba490 kind:data(any) addr:0x22ba490
 data_ov024_022ba4c8 kind:data(any) addr:0x22ba4c8
 data_ov024_022ba4d4 kind:data(any) addr:0x22ba4d4

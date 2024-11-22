@@ -35,8 +35,8 @@ func_ov030_022b92f8 kind:function(arm,size=0x1a8) addr:0x22b92f8
 func_ov030_022b94a0 kind:function(arm,size=0xe8) addr:0x22b94a0
 func_ov030_022b9588 kind:function(arm,size=0x200) addr:0x22b9588
 func_ov030_022b9788 kind:function(arm,size=0x4) addr:0x22b9788
-func_ov030_022b978c kind:function(arm,size=0x1c8) addr:0x22b978c
-func_ov030_022b9954 kind:function(arm,size=0x174) addr:0x22b9954
+Enemy229Init kind:function(arm,size=0x1c8) addr:0x22b978c
+Enemy229Main kind:function(arm,size=0x174) addr:0x22b9954
 data_ov030_022b9ac8 kind:data(any) addr:0x22b9ac8
 data_ov030_022b9ae0 kind:data(any) addr:0x22b9ae0
 data_ov030_022b9c08 kind:data(any) addr:0x22b9c08 ambiguous
