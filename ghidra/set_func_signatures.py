@@ -15,7 +15,7 @@ def set_all_obj_func_signatures():
                     func_symbols = st.getGlobalSymbols(func_name)
                     for func_sym in func_symbols:
                         print(func_sym)
-                        set_function_signature(func_sym.getAddress(), "void func(Obj_c* obj)")
+                        set_function_signature(func_sym.getAddress(), "void func(DrObj* obj)")
 
 if __name__ == "__main__":
     set_all_obj_func_signatures()

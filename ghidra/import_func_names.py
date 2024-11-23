@@ -169,7 +169,7 @@ def fix_up_reference_and_symbol(from_addr, new_dest_symbol_name, overlay_indexes
         # fm.createFunction(new_dest_symbol_name, from_addr, func_addr_set_view, SourceType.USER_DEFINED)
     # else:
     #     # Set the function's signature.
-    #     signature = "void func(Obj_c* obj)"
+    #     signature = "void func(DrObj* obj)"
     #     dtms = state.tool.getService(DataTypeManagerService)
     #     parser = FunctionSignatureParser(dtm, dtms)
     #     sig = parser.parse(None, signature)
@@ -178,7 +178,7 @@ def fix_up_reference_and_symbol(from_addr, new_dest_symbol_name, overlay_indexes
 
 
 def import_enemy_funcs():
-    dt_EnemyParam_c = dtm.getDataType("/_Custom/EnemyParam_c")
+    dt_EnemyParam_s = dtm.getDataType("/_Custom/EnemyParam_s")
     
     start_symbols = st.getGlobalSymbols("EnemyParam")
     assert len(start_symbols) == 1
@@ -192,8 +192,8 @@ def import_enemy_funcs():
             assert line != ""
             init_func_name, main_func_name = line.strip().split(" ")
             
-            init_func_ptr_addr = get_struct_field_addr(enemy_param_addr, dt_EnemyParam_c, "mInitFunc")
-            main_func_ptr_addr = get_struct_field_addr(enemy_param_addr, dt_EnemyParam_c, "mMainFunc")
+            init_func_ptr_addr = get_struct_field_addr(enemy_param_addr, dt_EnemyParam_s, "mInitFunc")
+            main_func_ptr_addr = get_struct_field_addr(enemy_param_addr, dt_EnemyParam_s, "mMainFunc")
             
             if enemy_idx in ENEMY_IDX_TO_OVERLAY_IDX:
                 overlay_indexes_to_try = [ENEMY_IDX_TO_OVERLAY_IDX[enemy_idx]]
@@ -203,7 +203,7 @@ def import_enemy_funcs():
             fix_up_reference_and_symbol(init_func_ptr_addr, init_func_name, overlay_indexes_to_try)
             fix_up_reference_and_symbol(main_func_ptr_addr, main_func_name, overlay_indexes_to_try)
             
-            enemy_param_addr = offset_addr(enemy_param_addr, dt_EnemyParam_c.getLength())
+            enemy_param_addr = offset_addr(enemy_param_addr, dt_EnemyParam_s.getLength())
         assert f.readline() == ""
 
 def import_dev_funcs():
@@ -244,7 +244,7 @@ def import_rune_funcs():
         ("RuneLrData", 0x1F),
     ]
     for rune_list_name, rune_count in rune_lists:
-        rune_data_struct = dtm.getDataType("/_Custom/" + rune_list_name + "_c")
+        rune_data_struct = dtm.getDataType("/_Custom/" + rune_list_name + "_s")
         
         func_start_symbols = st.getGlobalSymbols(rune_list_name)
         assert len(func_start_symbols) == 1

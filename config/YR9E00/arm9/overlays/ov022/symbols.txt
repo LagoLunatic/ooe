@@ -1730,7 +1730,7 @@ func_ov022_022a4fe0 kind:function(arm,size=0xc) addr:0x22a4fe0
 func_ov022_022a4fec kind:function(arm,size=0xc) addr:0x22a4fec
 func_ov022_022a4ff8 kind:function(arm,size=0xc) addr:0x22a4ff8
 func_ov022_022a5004 kind:function(arm,size=0xc) addr:0x22a5004
-func_ov022_022a5010 kind:function(arm,size=0xc) addr:0x22a5010
+WarpRoomWorkAddressGet kind:function(arm,size=0xc) addr:0x22a5010
 DevWarpRoom kind:function(arm,size=0x31c) addr:0x22a501c
 DevWarpRoomInit kind:function(arm,size=0x430) addr:0x22a5338
 data_ov022_022a5770 kind:data(any) addr:0x22a5770

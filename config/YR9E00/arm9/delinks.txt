@@ -16,6 +16,9 @@ src/system/dr_obj.c:
 src/system/dr_save.c:
     .text       start:0x202c8c8 end:0x202c8d8
 
+src/system/dr_step.c:
+    .text       start:0x202d918 end:0x202d994
+
 src/system/dr_pal.c:
     .text       start:0x202e328 end:0x202e560
 
@@ -40,6 +43,10 @@ src/game/g_effect.c:
 src/game/item/g_item.c:
     .text       start:0x20622b8 end:0x2063ca4
 
+src/game/gimmick/dev_block.c:
+    complete
+    .text       start:0x2065a8c end:0x2065a94
+
 src/game/rune/g_rune.c:
     .text       start:0x206a748 end:0x206fd54
 
@@ -53,7 +60,7 @@ src/game/rune/g_rune_lr.c:
     .text       start:0x209fe98 end:0x20a9588
 
 src/game/g_quest.c:
-    .text       start:0x20a9ba4 end:0x20a9be4
+    .text       start:0x20a96d0 end:0x20a9be4
 
 src/system/dr_sound.c:
-    .text       start:0x20aa508 end:0x20aa8c8
+    .text       start:0x20aa4b8 end:0x20aa8c8

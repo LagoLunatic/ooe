@@ -11,7 +11,7 @@ import os
 from ghidra_utils import *
 
 def export_enemy_funcs():
-    dt_EnemyParam_c = dtm.getDataType("/_Custom/EnemyParam_c")
+    dt_EnemyParam_s = dtm.getDataType("/_Custom/EnemyParam_s")
     
     start_symbols = st.getGlobalSymbols("EnemyParam")
     assert len(start_symbols) == 1
@@ -19,10 +19,10 @@ def export_enemy_funcs():
     
     with open(EXPORTS_DIR + "/enemy_funcs.txt", "w") as f:
         for i in range(0x78+1):
-            init_func_name = get_symbol_name_pointed_to_by(get_struct_field_addr(enemy_param_addr, dt_EnemyParam_c, "mInitFunc"))
-            main_func_name = get_symbol_name_pointed_to_by(get_struct_field_addr(enemy_param_addr, dt_EnemyParam_c, "mMainFunc"))
+            init_func_name = get_symbol_name_pointed_to_by(get_struct_field_addr(enemy_param_addr, dt_EnemyParam_s, "mInitFunc"))
+            main_func_name = get_symbol_name_pointed_to_by(get_struct_field_addr(enemy_param_addr, dt_EnemyParam_s, "mMainFunc"))
             f.write("%s %s\n" % (init_func_name, main_func_name))
-            enemy_param_addr = offset_addr(enemy_param_addr, dt_EnemyParam_c.getLength())
+            enemy_param_addr = offset_addr(enemy_param_addr, dt_EnemyParam_s.getLength())
 
 def export_dev_funcs():
     dt_pointer = dtm.getDataType("/pointer")
@@ -49,7 +49,7 @@ def export_rune_funcs():
         ("RuneLrData", 0x1F),
     ]
     for rune_list_name, rune_count in rune_lists:
-        rune_data_struct = dtm.getDataType("/_Custom/" + rune_list_name + "_c")
+        rune_data_struct = dtm.getDataType("/_Custom/" + rune_list_name + "_s")
         
         func_start_symbols = st.getGlobalSymbols(rune_list_name)
         assert len(func_start_symbols) == 1
