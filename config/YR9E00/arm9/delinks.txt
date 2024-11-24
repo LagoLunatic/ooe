@@ -4,6 +4,9 @@
     .data       start:0x020d8000 end:0x020f6b40 kind:data align:32
     .bss        start:0x020f6b40 end:0x021dd280 kind:bss align:32
 
+src/system/dr_pal.c:
+    .text       start:0x2025ad0 end:0x2025bbc
+
 src/system/dr_fade.c:
     .text       start:0x20270b0 end:0x20272f4
 
@@ -12,6 +15,9 @@ src/system/dr_heap.c:
 
 src/system/dr_obj.c:
     .text       start:0x2028c58 end:0x202bae8
+
+src/system/dr_opd.c:
+    .text       start:0x202bc2c end:0x202bdb4
 
 src/system/dr_save.c:
     .text       start:0x202c8c8 end:0x202c8d8
@@ -28,17 +34,26 @@ src/system/dr_vram.c:
 src/system/dr_anime.c:
     .text       start:0x2030470 end:0x20307ac
 
-src/system/dr_obj_hit.c:
+src/system/dr_objhit.c:
     .text       start:0x20316f4 end:0x20325d4
 
 src/system/dr_fs.c:
     .text       start:0x2032940 end:0x20330c8
+
+src/system/dr_math.c:
+    .text       start:0x2033298 end:0x203333c
+
+src/system/dr_bghit.c:
+    .text       start:0x2033838 end:0x2034508
 
 src/game/player/g_player.c:
     .text       start:0x204e634 end:0x2051dbc
 
 src/game/g_effect.c:
     .text       start:0x2051e8c end:0x2058558
+
+src/system/dr_joint.c:
+    .text       start:0x2065a94 end:0x20681a0
 
 src/game/item/g_item.c:
     .text       start:0x20622b8 end:0x2063ca4
