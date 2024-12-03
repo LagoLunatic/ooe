@@ -5,77 +5,77 @@
     .bss        start:0x020f6b40 end:0x021dd280 kind:bss align:32
 
 src/system/dr_pal.c:
-    .text       start:0x2025ad0 end:0x2025bbc
+    .text       start:0x02025ad0 end:0x02025bbc
 
 src/system/dr_fade.c:
-    .text       start:0x20270b0 end:0x20272f4
+    .text       start:0x020270b0 end:0x020272f4
 
 src/system/dr_heap.c:
-    .text       start:0x20279a8 end:0x2028028
+    .text       start:0x020279a8 end:0x02028028
 
 src/system/dr_obj.c:
-    .text       start:0x2028c58 end:0x202bae8
+    .text       start:0x02028c58 end:0x0202bae8
 
 src/system/dr_opd.c:
-    .text       start:0x202bc2c end:0x202bdb4
+    .text       start:0x0202bc2c end:0x0202bdb4
 
 src/system/dr_save.c:
-    .text       start:0x202c8c8 end:0x202c8d8
+    .text       start:0x0202c8c8 end:0x0202c8d8
 
 src/system/dr_step.c:
-    .text       start:0x202d918 end:0x202d994
+    .text       start:0x0202d918 end:0x0202d994
 
 src/system/dr_pal.c:
-    .text       start:0x202e328 end:0x202e560
+    .text       start:0x0202e328 end:0x0202e560
 
 src/system/dr_vram.c:
-    .text       start:0x202ecb4 end:0x202f1e8
+    .text       start:0x0202ecb4 end:0x0202f1e8
 
 src/system/dr_anime.c:
-    .text       start:0x2030470 end:0x20307ac
+    .text       start:0x02030470 end:0x020307ac
 
 src/system/dr_objhit.c:
-    .text       start:0x20316f4 end:0x20325d4
+    .text       start:0x020316f4 end:0x020325d4
 
 src/system/dr_fs.c:
-    .text       start:0x2032940 end:0x20330c8
+    .text       start:0x02032940 end:0x020330c8
 
 src/system/dr_math.c:
-    .text       start:0x2033298 end:0x203333c
+    .text       start:0x02033298 end:0x0203333c
 
 src/system/dr_bghit.c:
-    .text       start:0x2033838 end:0x2034508
+    .text       start:0x02033838 end:0x02034508
 
 src/game/player/g_player.c:
-    .text       start:0x204e634 end:0x2051dbc
+    .text       start:0x0204e634 end:0x02051dbc
 
 src/game/g_effect.c:
-    .text       start:0x2051e8c end:0x2058558
+    .text       start:0x02051e8c end:0x02058558
 
 src/system/dr_joint.c:
-    .text       start:0x2065a94 end:0x20681a0
+    .text       start:0x02065a94 end:0x020681a0
 
 src/game/item/g_item.c:
-    .text       start:0x20622b8 end:0x2063ca4
+    .text       start:0x020622b8 end:0x02063ca4
 
 src/game/gimmick/dev_block.c:
     complete
-    .text       start:0x2065a8c end:0x2065a94
+    .text       start:0x02065a8c end:0x02065a94
 
 src/game/rune/g_rune.c:
-    .text       start:0x206a748 end:0x206fd54
+    .text       start:0x0206a748 end:0x0206fd54
 
 src/game/rune/g_rune_arm.c:
-    .text       start:0x206fd54 end:0x207aa18
+    .text       start:0x0206fd54 end:0x0207aa18
 
 src/game/rune/g_rune_back.c:
-    .text       start:0x207aa18 end:0x2083ae0
+    .text       start:0x0207aa18 end:0x02083ae0
 
 src/game/rune/g_rune_lr.c:
-    .text       start:0x209fe98 end:0x20a9588
+    .text       start:0x0209fe98 end:0x020a9588
 
 src/game/g_quest.c:
-    .text       start:0x20a96d0 end:0x20a9be4
+    .text       start:0x020a96d0 end:0x020a9be4
 
 src/system/dr_sound.c:
-    .text       start:0x20aa4b8 end:0x20aa8c8
+    .text       start:0x020aa4b8 end:0x020aa8c8
