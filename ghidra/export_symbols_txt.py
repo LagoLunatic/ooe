@@ -30,7 +30,7 @@ def read_symbols_txt_line(line, addr_space):
 
 def write_symbols_txt_line(sym_name, sym_kind, addr, ambiguous):
     addr_word = addr.getAddressableWordOffset()
-    sym_addr = "addr:0x%x" % addr_word
+    sym_addr = "addr:0x%08x" % addr_word
     
     words = [sym_name, sym_kind, sym_addr]
     if ambiguous:
