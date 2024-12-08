@@ -1,11 +1,13 @@
+# Shared utility code for Ghidra scripts.
+
 from __future__ import print_function
 
-from __main__ import currentProgram, state, monitor
+from __main__ import currentProgram, state, monitor, askString
 
-from ghidra.program.model.symbol import RefType, SourceType
-from ghidra.app.services import DataTypeManagerService
-from ghidra.app.util.parser import FunctionSignatureParser
-from ghidra.app.cmd.function import ApplyFunctionSignatureCmd
+from ghidra.program.model.symbol import RefType, SourceType # pyright: ignore [reportMissingImports]
+from ghidra.app.services import DataTypeManagerService # pyright: ignore [reportMissingImports]
+from ghidra.app.util.parser import FunctionSignatureParser # pyright: ignore [reportMissingImports]
+from ghidra.app.cmd.function import ApplyFunctionSignatureCmd # pyright: ignore [reportMissingImports]
 
 st = currentProgram.getSymbolTable()
 rm = currentProgram.getReferenceManager()

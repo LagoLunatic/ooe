@@ -20,6 +20,8 @@ def read_symbols_txt_line(line, addr_space):
     elif len(words) == 3:
         sym_name, sym_kind, sym_addr = words
         ambiguous = False
+    else:
+        raise Exception("Invalid symbols.txt line:", repr(line))
     
     addr_key, addr_val = sym_addr.split(":", 1)
     assert addr_key == "addr"
