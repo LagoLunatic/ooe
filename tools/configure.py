@@ -136,9 +136,17 @@ def main():
         )
         n.newline()
 
+        # -MMD excludes all includes instead of just system includes for some reason, so use -MD instea.
+        mwcc_cmd = f'{WINE} "{mwcc_path}/mwccarm.exe" {CC_FLAGS} {CC_INCLUDES} $cc_flags -d $game_version -MD -c $in -o $basedir'
+        mwcc_implicit = []
+        if os.name != "nt":
+            transform_dep = "tools/transform_dep.py"
+            mwcc_cmd += f" && $python {transform_dep} $basefile.d $basefile.d"
+            mwcc_implicit.append(transform_dep)
         n.rule(
             name="mwcc",
-            command=f'{WINE} "{mwcc_path}/mwccarm.exe" {CC_FLAGS} {CC_INCLUDES} $cc_flags -d $game_version $in -o $out'
+            command=mwcc_cmd,
+            depfile="$basefile.d",
         )
         n.newline()
 
@@ -183,7 +191,7 @@ def main():
 
         add_extract_build(n, game_extract, game_version)
         add_delink_and_lcf_builds(n, game_config, game_build, game_extract)
-        add_mwcc_builds(n, game_version, game_build)
+        add_mwcc_builds(n, game_version, game_build, mwcc_implicit)
         add_mwld_and_rom_builds(n, game_build, game_config, game_version)
 
 
@@ -249,20 +257,23 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, game_build: Path, game_confi
     n.newline()
 
 
-def add_mwcc_builds(n: ninja_syntax.Writer, game_version: str, game_build: Path):
+def add_mwcc_builds(n: ninja_syntax.Writer, game_version: str, game_build: Path, mwcc_implicit: list[Path]):
     for source_file in get_c_cpp_files([src_path, libs_path]):
-        output_file = str(game_build / source_file.with_suffix(".o"))
+        src_obj_path = game_build / source_file
         cc_flags = []
         if is_cpp(source_file): cc_flags.append("-lang=c++")
         elif is_c(source_file): cc_flags.append("-lang=c")
         n.build(
             inputs=str(source_file),
             rule="mwcc",
-            outputs=output_file,
+            outputs=str(src_obj_path.with_suffix(".o")),
             variables={
                 "game_version": game_version,
-                "cc_flags": " ".join(cc_flags)
-            }
+                "cc_flags": " ".join(cc_flags),
+                "basedir": os.path.dirname(src_obj_path),
+                "basefile": str(src_obj_path.with_suffix("")),
+            },
+            implicit=mwcc_implicit,
         )
         n.newline()
         
