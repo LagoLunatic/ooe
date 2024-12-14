@@ -1,7 +1,7 @@
 func_ov046_022c1fe0 kind:function(arm,size=0x7d0) addr:0x022c1fe0
 DevSeaSurfaceInit kind:function(arm,size=0xe0) addr:0x022c27b0
 DevSeaSurface kind:function(arm,size=0x198) addr:0x022c2890
-func_ov046_022c2a28 kind:function(arm,size=0x54) addr:0x022c2a28
+DevBgModelDaaaPersSet kind:function(arm,size=0x54) addr:0x022c2a28
 func_ov046_022c2a7c kind:function(arm,size=0x30) addr:0x022c2a7c
 DevMapModelDAAInit kind:function(arm,size=0x224) addr:0x022c2aac
 DevMapModelDAA kind:function(arm,size=0x284) addr:0x022c2cd0

@@ -41,6 +41,8 @@ def get_member_string_for_undefined_region(undefined_member_start_str, hex_offse
 
 def export_struct_to_clipboard(struct_data_type_path):
     struct = dtm.getDataType("/" + struct_data_type_path)
+    if struct is None:
+        struct = dtm.getDataType("/_Custom/" + struct_data_type_path)
     struct_name = struct.getName()
     offset_pad_size = len("{:X}".format(struct.getLength()))
 

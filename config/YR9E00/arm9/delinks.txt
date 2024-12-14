@@ -4,35 +4,47 @@
     .data       start:0x020d8000 end:0x020f6b40 kind:data align:32
     .bss        start:0x020f6b40 end:0x021dd280 kind:bss align:32
 
-src/system/dr_pal.c:
-    .text       start:0x02025ad0 end:0x02025bbc
+src/secure_area.c:
+    .text       start:0x02000068 end:0x020000d0
+
+src/system/dr_draw.c:
+    .text       start:0x02025814 end:0x02025c5c
 
 src/system/dr_fade.c:
     .text       start:0x020270b0 end:0x020272f4
 
+src/system/dr_fog.c:
+    .text       start:0x02027604 end:0x02027620
+
 src/system/dr_heap.c:
     .text       start:0x020279a8 end:0x02028028
 
+src/system/dr_light.c:
+    .text       start:0x02028894 end:0x020288fc
+
 src/system/dr_obj.c:
-    .text       start:0x02028c58 end:0x0202bae8
+    .text       start:0x02028b90 end:0x0202bae8
 
 src/system/dr_opd.c:
-    .text       start:0x0202bc2c end:0x0202bdb4
+    .text       start:0x0202bc2c end:0x0202bf1c
 
 src/system/dr_save.c:
     .text       start:0x0202c8c8 end:0x0202c8d8
 
 src/system/dr_step.c:
-    .text       start:0x0202d918 end:0x0202d994
+    .text       start:0x0202d918 end:0x0202d9c0
 
 src/system/dr_pal.c:
-    .text       start:0x0202e328 end:0x0202e560
+    .text       start:0x0202d9d0 end:0x0202e560
 
 src/system/dr_vram.c:
     .text       start:0x0202ecb4 end:0x0202f1e8
 
 src/system/dr_anime.c:
     .text       start:0x02030470 end:0x020307ac
+
+src/system/dr_bgctrl.c:
+    .text       start:0x020315f0 end:0x02031620
 
 src/system/dr_objhit.c:
     .text       start:0x020316f4 end:0x020325d4
@@ -46,6 +58,18 @@ src/system/dr_math.c:
 src/system/dr_bghit.c:
     .text       start:0x02033838 end:0x02034508
 
+src/system/dr_3dbg.c:
+    .text       start:0x0203464c end:0x020346e8
+
+src/system/dr_debug.c:
+    .text       start:0x0203552c end:0x02035530
+
+src/game/g_map.c:
+    .text       start:0x020398e4 end:0x0203ae70
+
+src/game/g_cmn.c:
+    .text       start:0x0203b258 end:0x0203ce90
+
 src/game/player/g_player.c:
     .text       start:0x0204e634 end:0x02051dbc
 
@@ -58,12 +82,16 @@ src/system/dr_joint.c:
 src/game/item/g_item.c:
     .text       start:0x020622b8 end:0x02063ca4
 
+src/game/enemy/g_enemy.c:
+    .text       start:0x02064b88 end:0x02065458
+
 src/game/gimmick/dev_block.c:
     complete
     .text       start:0x02065a8c end:0x02065a94
 
 src/game/rune/g_rune.c:
     .text       start:0x0206a748 end:0x0206fd54
+    .data       start:0x020f3b7c end:0x020f3b84
 
 src/game/rune/g_rune_arm.c:
     .text       start:0x0206fd54 end:0x0207aa18

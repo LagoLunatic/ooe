@@ -1,15 +1,66 @@
 #ifndef GAME_H
 #define GAME_H
 
-typedef struct GameWork_s {
-    u8 _000[0x464 - 0x000];
-    int _464;
-    int _468;
-    u8 _46C[0x6B8 - 0x46C];
-    u32 money;
-    u8 _6BC[0x740 - 0x6BC];
-    u32 pickupFlags[13];
-} GameWork_s;
+#include "system/dr_obj.h"
+
+typedef struct GameWork_s GameWork_s;
+
+struct GameWork_s {
+    /* 0x000 */ u8 m000[0x034 - 0x000];
+    /* 0x034 */ uint m034;
+    /* 0x038 */ u8 m038[0x03C - 0x038];
+    /* 0x03C */ uint m03C;
+    /* 0x040 */ u8 m040[0x054 - 0x040];
+    /* 0x054 */ u16 m054;
+    /* 0x056 */ u8 m056[0x05A - 0x056];
+    /* 0x05A */ u16 m05A;
+    /* 0x05C */ u8 m05C[0x061 - 0x05C];
+    /* 0x061 */ u8 m061;
+    /* 0x062 */ u8 m062[0x06A - 0x062];
+    /* 0x06A */ u16 m06A;
+    /* 0x06C */ u8 m06C[0x0C8 - 0x06C];
+    /* 0x0C8 */ DrObj* player;
+    /* 0x0CC */ u8 m0CC[0x26A - 0x0CC];
+    /* 0x26A */ s16 m26A;
+    /* 0x26C */ u8 m26C[0x464 - 0x26C];
+    /* 0x464 */ int m464;
+    /* 0x468 */ int m468;
+    /* 0x46C */ u8 m46C[0x4D8 - 0x46C];
+    /* 0x4D8 */ u8 m4D8;
+    /* 0x4D9 */ u8 m4D9[0x4E4 - 0x4D9];
+    /* 0x4E4 */ void* m4E4;
+    /* 0x4E8 */ u8 m4E8[0x668 - 0x4E8];
+    /* 0x668 */ s16 equippedItemIndexes[9];
+    /* 0x67A */ u8 m67A[0x6B8 - 0x67A];
+    /* 0x6B8 */ uint money;
+    /* 0x6BC */ u8 m6BC[0x720 - 0x6BC];
+    /* 0x720 */ uint m720;
+    /* 0x724 */ u8 m724[0x740 - 0x724];
+    /* 0x740 */ uint pickupFlags[13];
+    /* 0x774 */ u8 m774[0x78C - 0x774];
+    /* 0x78C */ uint bossDeathFlags;
+    /* 0x790 */ u8 m790[0x8D2 - 0x790];
+    /* 0x8D2 */ s16 m8D2;
+    /* 0x8D4 */ u8 m8D4[0x990 - 0x8D4];
+    /* 0x990 */ u32 m990;
+    /* 0x994 */ u32 m994;
+    /* 0x998 */ u8 m998[0x9D8 - 0x998];
+    /* 0x9D8 */ u32 m9D8;
+    /* 0x9DC */ s16 m9DC;
+    /* 0x9DE */ s16 m9DE;
+    /* 0x9E0 */ u8 m9E0[0xA74 - 0x9E0];
+    /* 0xA74 */ u8 mA74;
+    /* 0xA75 */ u8 mA75;
+    /* 0xA76 */ u8 mA76[0xB38 - 0xA76];
+    /* 0xB38 */ u8 mB38;
+    /* 0xB39 */ u8 mB39[0xB3A - 0xB39];
+    /* 0xB3A */ u8 mB3A;
+    /* 0xB3B */ u8 mB3B[0xB3C - 0xB3B];
+    /* 0xB3C */ u8 difficulty;
+    /* 0xB3D */ u8 mB3D[0xB7D - 0xB3D];
+    /* 0xB7D */ u8 mB7D;
+    /* 0xB7E */ u8 mB7E[0xB80 - 0xB7E];
+};  // Size: 0xB80
 
 extern GameWork_s GameWork;
 

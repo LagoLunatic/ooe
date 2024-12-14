@@ -27,7 +27,7 @@ func_ov035_022b9234 kind:function(arm,size=0x128) addr:0x022b9234
 func_ov035_022b935c kind:function(arm,size=0x168) addr:0x022b935c
 func_ov035_022b94c4 kind:function(arm,size=0xb4) addr:0x022b94c4
 func_ov035_022b9578 kind:function(arm,size=0x2d8) addr:0x022b9578
-func_ov035_022b9850 kind:function(arm,size=0xcc) addr:0x022b9850
+Enemy310Draw kind:function(arm,size=0xcc) addr:0x022b9850
 Enemy310Main kind:function(arm,size=0x12c) addr:0x022b991c
 Enemy310Init kind:function(arm,size=0x22c) addr:0x022b9a48
 data_ov035_022b9c74 kind:data(any) addr:0x022b9c74

@@ -1,9 +1,14 @@
-#include "types.h"
 #include "game/game.h"
+#include "types.h"
 
-void DrSound_PlayWithLocation(int r0, Vec pos, int sp00) {
-    if (DrSave_IsBusy() && (r0 & 0x40000000) != 0) {
+void DrSound_PlayWithLocation(int soundId, Vec3x32 pos, int sp00) {
+    if (DrSave_IsBusy() && (soundId & 0x40000000) != 0) {
         return;
     }
-    SdInf_PlayWithLocation(r0, sp00, ((pos.x - get_GameWork()->_464) / 0x1000) - 0x80, ((pos.y - get_GameWork()->_468) / 0x1000) - 0x60);
+    SdInf_PlayWithLocation(
+        soundId,
+        sp00,
+        FX32_INT(pos.x - get_GameWork()->m464) - 0x80,
+        FX32_INT(pos.y - get_GameWork()->m468) - 0x60
+    );
 }

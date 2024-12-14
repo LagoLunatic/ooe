@@ -1,0 +1,10 @@
+IndentWidth: 4
+IndentCaseLabels: true
+AllowShortIfStatementsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: false
+ColumnLimit: 100
+PointerAlignment: Left
+SpacesBeforeTrailingComments: 2
+BinPackArguments: false
+BinPackParameters: false
+AlignAfterOpenBracket: BlockIndent

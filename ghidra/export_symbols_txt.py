@@ -65,7 +65,7 @@ def export_ghidra_symbols_for_overlay(overlay_index):
                 if sym.getSource() != SourceType.DEFAULT:
                     print(sym_name, sym, sym.getSource())
                     if sym_name != ghidra_sym_name and sym_name != "Entry":
-                        assert sym_name.startswith("func_" + dsd_auto_sym_name_prefix) or sym_name.startswith("data_" + dsd_auto_sym_name_prefix), sym_name
+                        # assert sym_name.startswith("func_" + dsd_auto_sym_name_prefix) or sym_name.startswith("data_" + dsd_auto_sym_name_prefix), sym_name
                         sym_name = ghidra_sym_name
             
             updated_symbols.append((sym_name, sym_kind, addr, ambiguous))
