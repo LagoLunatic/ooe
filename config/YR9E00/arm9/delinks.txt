@@ -8,7 +8,7 @@ src/secure_area.c:
     .text       start:0x02000068 end:0x020000d0
 
 src/system/dr_draw.c:
-    .text       start:0x02025814 end:0x02025c5c
+    .text       start:0x020257ec end:0x02026efc
 
 src/system/dr_fade.c:
     .text       start:0x020270b0 end:0x020272f4
@@ -16,35 +16,44 @@ src/system/dr_fade.c:
 src/system/dr_fog.c:
     .text       start:0x02027604 end:0x02027620
 
+src/system/dr_graph.c:
+    .text       start:0x020276d4 end:0x02027960
+
 src/system/dr_heap.c:
-    .text       start:0x020279a8 end:0x02028028
+    .text       start:0x020279a8 end:0x020280ac
+
+src/system/dr_io.c:
+    .text       start:0x020280cc end:0x02028540
+
+src/system/dr_material.c:
+    .text       start:0x0202856c end:0x020285b8
 
 src/system/dr_light.c:
-    .text       start:0x02028894 end:0x020288fc
+    .text       start:0x020286a0 end:0x020289e0
 
 src/system/dr_obj.c:
-    .text       start:0x02028b90 end:0x0202bae8
+    .text       start:0x020289e0 end:0x0202bb84
 
 src/system/dr_opd.c:
-    .text       start:0x0202bc2c end:0x0202bf1c
+    .text       start:0x0202bb84 end:0x0202bf1c
 
 src/system/dr_save.c:
     .text       start:0x0202c8c8 end:0x0202c8d8
 
 src/system/dr_step.c:
-    .text       start:0x0202d918 end:0x0202d9c0
+    .text       start:0x0202d460 end:0x0202d9c0
 
 src/system/dr_pal.c:
     .text       start:0x0202d9d0 end:0x0202e560
 
 src/system/dr_vram.c:
-    .text       start:0x0202ecb4 end:0x0202f1e8
+    .text       start:0x0202e8d4 end:0x0202f1e8
 
 src/system/dr_anime.c:
-    .text       start:0x02030470 end:0x020307ac
+    .text       start:0x02030390 end:0x020307ac
 
 src/system/dr_bgctrl.c:
-    .text       start:0x020315f0 end:0x02031620
+    .text       start:0x0203118c end:0x02031620
 
 src/system/dr_objhit.c:
     .text       start:0x020316f4 end:0x020325d4
@@ -61,8 +70,14 @@ src/system/dr_bghit.c:
 src/system/dr_3dbg.c:
     .text       start:0x0203464c end:0x020346e8
 
+src/system/dr_2dbg.c:
+    .text       start:0x02034df0 end:0x02034e2c
+
 src/system/dr_debug.c:
     .text       start:0x0203552c end:0x02035530
+
+src/system/dr_charaobj.c:
+    .text       start:0x0203553c end:0x020358c8
 
 src/game/g_map.c:
     .text       start:0x020398e4 end:0x0203ae70
@@ -85,6 +100,9 @@ src/game/item/g_item.c:
 src/game/enemy/g_enemy.c:
     .text       start:0x02064b88 end:0x02065458
 
+src/system/dr_sublcdc.c:
+    .text       start:0x0206568c end:0x02065890
+
 src/game/gimmick/dev_block.c:
     complete
     .text       start:0x02065a8c end:0x02065a94
@@ -98,6 +116,9 @@ src/game/rune/g_rune_arm.c:
 
 src/game/rune/g_rune_back.c:
     .text       start:0x0207aa18 end:0x02083ae0
+
+src/system/dr_font.c:
+    .text       start:0x02083c2c end:0x02083ff8
 
 src/game/rune/g_rune_lr.c:
     .text       start:0x0209fe98 end:0x020a9588
