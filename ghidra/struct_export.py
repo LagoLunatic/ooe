@@ -43,6 +43,8 @@ def export_struct_to_clipboard(struct_data_type_path):
     struct = dtm.getDataType("/" + struct_data_type_path)
     if struct is None:
         struct = dtm.getDataType("/_Custom/" + struct_data_type_path)
+    if struct is None:
+        struct = dtm.getDataType("/Demangler/" + struct_data_type_path)
     struct_name = struct.getName()
     offset_pad_size = len("{:X}".format(struct.getLength()))
 
@@ -101,6 +103,9 @@ def export_struct_to_clipboard(struct_data_type_path):
             member_name = member_name+array
         elif data_type == "char":
             data_type = "s8"
+        
+        if data_type[0] == "_":
+            data_type = data_type[1:]
         
         # if data_type == "PTMF": # Pointer to member function
         #     match = re.search(r"^mCurr?(\S+Func)$", member_name)

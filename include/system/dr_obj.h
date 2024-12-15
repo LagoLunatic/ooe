@@ -142,4 +142,8 @@ struct DrObj {
     /* 0x15C */ int m15C;
 };  // Size: 0x160
 
+void DrObjHit_Init(DrObj*, int, DrObjHitCBFunc hitAttackCB, DrObjHitCBFunc damageCB);
+void DrObj_DummyFunc(DrObj*);
+DrObj* DrObj_ObjGetNextWork(int, int, DrObjFunc);
+
 #endif /* DR_OBJ_H */

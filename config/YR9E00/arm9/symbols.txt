@@ -1116,7 +1116,7 @@ DrOpd_SystemInit kind:function(arm,size=0x80) addr:0x0202bbac
 DrOpd_OpdWorkClear kind:function(arm,size=0xd4) addr:0x0202bc2c
 DrOpd_GetOpdWork kind:function(arm,size=0x8c) addr:0x0202bd00
 DrOpd_GetOpdAddr kind:function(arm,size=0x28) addr:0x0202bd8c
-func_0202bdb4 kind:function(arm,size=0x30) addr:0x0202bdb4
+DrGetAnimHeader kind:function(arm,size=0x30) addr:0x0202bdb4
 DrGetPatHeader kind:function(arm,size=0x28) addr:0x0202bde4
 DrGetOpdRect kind:function(arm,size=0x10) addr:0x0202be0c
 DrGetOpdObjData kind:function(arm,size=0x10) addr:0x0202be1c
@@ -1228,7 +1228,7 @@ func_0202ec3c kind:function(arm,size=0x2c) addr:0x0202ec3c
 func_0202ec68 kind:function(arm,size=0x28) addr:0x0202ec68
 func_0202ec90 kind:function(arm,size=0x24) addr:0x0202ec90
 DrVram_GetFreeVram kind:function(arm,size=0x44) addr:0x0202ecb4
-func_0202ecf8 kind:function(arm,size=0x44) addr:0x0202ecf8
+DrVram_GetFreeVram_SetStart kind:function(arm,size=0x44) addr:0x0202ecf8
 func_0202ed3c kind:function(arm,size=0x3c) addr:0x0202ed3c
 func_0202ed78 kind:function(arm,size=0x58) addr:0x0202ed78
 func_0202edd0 kind:function(arm,size=0x60) addr:0x0202edd0
@@ -1640,7 +1640,7 @@ gCmnGetAimDir kind:function(arm,size=0x4c) addr:0x0203b488
 gCmnDistRate kind:function(arm,size=0x1c) addr:0x0203b4d4
 DrSetObjOpdCmnFreeFlag kind:function(arm,size=0xe0) addr:0x0203b4f0
 DrSetObjOpdCmnFree kind:function(arm,size=0x14) addr:0x0203b5d0
-func_0203b5e4 kind:function(arm,size=0xec) addr:0x0203b5e4
+DrSetObjOpdTblCmnFreeDX kind:function(arm,size=0xec) addr:0x0203b5e4
 DrSetObjOpdTblCmnFree kind:function(arm,size=0x24) addr:0x0203b6d0
 GetFreeAlphaID kind:function(arm,size=0x30) addr:0x0203b6f4
 func_0203b724 kind:function(arm,size=0x34) addr:0x0203b724
@@ -4414,7 +4414,7 @@ data_020b8a04 kind:data(any) addr:0x020b8a04
 data_020b8a10 kind:data(any) addr:0x020b8a10
 data_020b8a1c kind:data(any) addr:0x020b8a1c
 data_020b8a28 kind:data(any) addr:0x020b8a28
-data_020b8a34 kind:data(any) addr:0x020b8a34
+f_armc02_chara kind:data(any) addr:0x020b8a34
 data_020b8a40 kind:data(any) addr:0x020b8a40
 data_020b8a4c kind:data(any) addr:0x020b8a4c
 data_020b8a58 kind:data(any) addr:0x020b8a58
@@ -6817,7 +6817,7 @@ data_020c9e20 kind:data(any) addr:0x020c9e20
 data_020c9ea4 kind:data(any) addr:0x020c9ea4
 data_020c9f28 kind:data(any) addr:0x020c9f28
 data_020c9fac kind:data(any) addr:0x020c9fac
-data_020ca010 kind:data(any) addr:0x020ca010
+c_armc02_pal kind:data(any) addr:0x020ca010
 data_020ca034 kind:data(any) addr:0x020ca034
 data_020ca0b8 kind:data(any) addr:0x020ca0b8
 data_020ca0fc kind:data(any) addr:0x020ca0fc
@@ -9017,7 +9017,7 @@ data_021dcfe0 kind:bss addr:0x021dcfe0
 data_021dcfe4 kind:bss addr:0x021dcfe4
 data_021dcfe8 kind:bss addr:0x021dcfe8
 data_021dcfec kind:bss addr:0x021dcfec
-data_021dcff0 kind:bss addr:0x021dcff0
+p_armc02_opd kind:bss addr:0x021dcff0
 data_021dcff4 kind:bss addr:0x021dcff4
 data_021dcff8 kind:bss addr:0x021dcff8
 data_021dcffc kind:bss addr:0x021dcffc

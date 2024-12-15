@@ -5,4 +5,5 @@
     .bss        start:0x02223c40 end:0x02223e00 kind:bss align:32
 
 src/game/enemy/enemy300.c:
+    complete
     .text       start:0x0221124c end:0x022117bc

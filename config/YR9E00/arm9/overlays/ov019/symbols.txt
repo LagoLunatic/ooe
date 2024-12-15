@@ -574,7 +574,7 @@ data_ov019_02222050 kind:data(any) addr:0x02222050
 data_ov019_02222060 kind:data(any) addr:0x02222060
 data_ov019_02222068 kind:data(any) addr:0x02222068
 data_ov019_02222070 kind:data(any) addr:0x02222070
-data_ov019_0222208c kind:data(any) addr:0x0222208c
+cyupa_vram_tbl kind:data(any) addr:0x0222208c
 data_ov019_022220a8 kind:data(any) addr:0x022220a8
 data_ov019_022220c0 kind:data(any) addr:0x022220c0
 data_ov019_022220d8 kind:data(any) addr:0x022220d8
