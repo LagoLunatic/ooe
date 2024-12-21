@@ -12,6 +12,10 @@ from:0x02000948 kind:load to:0x01ff8000 module:itcm
 from:0x0200094c kind:load to:0x02000c78 module:main
 from:0x02000b74 kind:load to:0x027e0021 module:dtcm
 from:0x02000b7c kind:load to:0x027e0000 module:dtcm
+from:0x02000ba0 kind:load to:0x020fec80 module:main
+from:0x02000ba4 kind:load to:0x020fec98 module:main
+from:0x02000ba8 kind:load to:0x020f69c0 module:main
+from:0x02000bac kind:load to:0x020f69c0 module:main
 from:0x02000c7c kind:arm_call to:0x02031804 module:main
 from:0x02000c88 kind:arm_call to:0x020319b4 module:main
 from:0x02000c94 kind:arm_call to:0x02043758 module:main
@@ -17435,6 +17439,7 @@ from:0x020d7e30 kind:load to:0x020f5b6c module:main
 from:0x020d7e84 kind:load to:0x020b5510 module:main
 from:0x020d7ec4 kind:load to:0x020b555c module:main
 from:0x020d7ed4 kind:load to:0x020d7edc module:main
+from:0x020d80b8 kind:load to:0x020163f4 module:main
 from:0x020d80bc kind:load to:0x020d8120 module:main
 from:0x020d80c0 kind:load to:0x020d8138 module:main
 from:0x020d80c4 kind:load to:0x020d80f0 module:main

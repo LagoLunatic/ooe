@@ -764,7 +764,7 @@ func_02015e44 kind:function(arm,size=0x154) addr:0x02015e44
 func_02015f98 kind:function(arm,size=0x1fc) addr:0x02015f98
 func_02016194 kind:function(arm,size=0x94) addr:0x02016194
 func_02016228 kind:function(arm,size=0x1b8) addr:0x02016228
-func_020163f4 kind:function(arm,size=0x294,offset=0x14) addr:0x020163e0
+func_020163f4 kind:function(arm,size=0x294) addr:0x020163f4
 func_02016674 kind:function(arm,size=0x60) addr:0x02016674
 func_020166d4 kind:function(arm,size=0x28) addr:0x020166d4
 func_020166fc kind:function(arm,size=0x40) addr:0x020166fc
@@ -8137,6 +8137,8 @@ data_020f9648 kind:bss addr:0x020f9648
 data_020f964e kind:bss addr:0x020f964e
 data_020f9650 kind:bss addr:0x020f9650
 data_020f96a8 kind:bss addr:0x020f96a8
+data_020fee00 kind:bss addr:0x020fee00
+data_020fee18 kind:bss addr:0x020fee18
 data_020ff0a0 kind:bss addr:0x020ff0a0
 data_020ff0ac kind:bss addr:0x020ff0ac
 data_020ff0c0 kind:bss addr:0x020ff0c0
@@ -8243,6 +8245,7 @@ data_02100354 kind:bss addr:0x02100354
 data_02100364 kind:bss addr:0x02100364
 data_02100378 kind:bss addr:0x02100378
 data_02100388 kind:bss addr:0x02100388
+data_02100398 kind:bss addr:0x02100398
 data_021003cc kind:bss addr:0x021003cc
 data_021003d8 kind:bss addr:0x021003d8
 data_021003e8 kind:bss addr:0x021003e8

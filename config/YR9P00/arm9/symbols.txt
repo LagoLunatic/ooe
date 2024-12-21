@@ -764,7 +764,7 @@ func_02015e44 kind:function(arm,size=0x154) addr:0x02015e44
 func_02015f98 kind:function(arm,size=0x1fc) addr:0x02015f98
 func_02016194 kind:function(arm,size=0x94) addr:0x02016194
 func_02016228 kind:function(arm,size=0x1b8) addr:0x02016228
-func_020163f4 kind:function(arm,size=0x294,offset=0x14) addr:0x020163e0
+func_020163f4 kind:function(arm,size=0x294) addr:0x020163f4
 func_02016674 kind:function(arm,size=0x60) addr:0x02016674
 func_020166d4 kind:function(arm,size=0x28) addr:0x020166d4
 func_020166fc kind:function(arm,size=0x40) addr:0x020166fc
@@ -8143,6 +8143,8 @@ data_020f9a68 kind:bss addr:0x020f9a68
 data_020f9a6e kind:bss addr:0x020f9a6e
 data_020f9a70 kind:bss addr:0x020f9a70
 data_020f9ac8 kind:bss addr:0x020f9ac8
+data_020ff220 kind:bss addr:0x020ff220
+data_020ff238 kind:bss addr:0x020ff238
 data_020ff4c0 kind:bss addr:0x020ff4c0
 data_020ff4cc kind:bss addr:0x020ff4cc
 data_020ff4e0 kind:bss addr:0x020ff4e0
