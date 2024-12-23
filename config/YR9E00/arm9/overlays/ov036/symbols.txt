@@ -1,5 +1,5 @@
-func_ov036_022b73a0 kind:function(arm,size=0x94) addr:0x022b73a0
-func_ov036_022b7434 kind:function(arm,size=0xdc) addr:0x022b7434
+Enemy318HitAttackCallBack kind:function(arm,size=0x94) addr:0x022b73a0
+Enemy318DamageCallBack kind:function(arm,size=0xdc) addr:0x022b7434
 func_ov036_022b7510 kind:function(arm,size=0x58) addr:0x022b7510
 func_ov036_022b7568 kind:function(arm,size=0x1c) addr:0x022b7568
 func_ov036_022b7584 kind:function(arm,size=0x1c) addr:0x022b7584
@@ -21,7 +21,7 @@ func_ov036_022b84c4 kind:function(arm,size=0x510) addr:0x022b84c4
 func_ov036_022b89d4 kind:function(arm,size=0x1d4) addr:0x022b89d4
 func_ov036_022b8ba8 kind:function(arm,size=0x1a4) addr:0x022b8ba8
 func_ov036_022b8d4c kind:function(arm,size=0x160) addr:0x022b8d4c
-func_ov036_022b8eac kind:function(arm,size=0xd4) addr:0x022b8eac
+Enemy318EndFunc kind:function(arm,size=0xd4) addr:0x022b8eac
 Enemy318Main kind:function(arm,size=0xd0) addr:0x022b8f80
 Enemy318Init kind:function(arm,size=0x1b0) addr:0x022b9050
 data_ov036_022b9200 kind:data(any) addr:0x022b9200

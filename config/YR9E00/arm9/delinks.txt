@@ -11,7 +11,7 @@ src/system/dr_draw.c:
     .text       start:0x020257ec end:0x02026efc
 
 src/system/dr_fade.c:
-    .text       start:0x020270b0 end:0x020272f4
+    .text       start:0x02026f38 end:0x020272f4
 
 src/system/dr_fog.c:
     .text       start:0x02027604 end:0x02027620
@@ -53,7 +53,7 @@ src/system/dr_anime.c:
     .text       start:0x02030390 end:0x020307ac
 
 src/system/dr_bgctrl.c:
-    .text       start:0x0203118c end:0x02031620
+    .text       start:0x020307cc end:0x02031620
 
 src/system/dr_objhit.c:
     .text       start:0x020316f4 end:0x020325d4
@@ -71,13 +71,19 @@ src/system/dr_3dbg.c:
     .text       start:0x0203464c end:0x020346e8
 
 src/system/dr_2dbg.c:
-    .text       start:0x02034df0 end:0x02034e2c
+    .text       start:0x02034df0 end:0x020352cc
 
 src/system/dr_debug.c:
     .text       start:0x0203552c end:0x02035530
 
 src/system/dr_charaobj.c:
     .text       start:0x0203553c end:0x020358c8
+
+src/system/dr_oam.c:
+    .text       start:0x020359a0 end:0x02035f14
+
+src/system/dr_main_sub.c:
+    .text       start:0x0203696c end:0x02036a5c
 
 src/game/g_map.c:
     .text       start:0x020398e4 end:0x0203ae70
@@ -86,7 +92,7 @@ src/game/g_cmn.c:
     .text       start:0x0203b258 end:0x0203ce90
 
 src/game/player/g_player.c:
-    .text       start:0x0204e634 end:0x02051dbc
+    .text       start:0x02049708 end:0x02051dbc
 
 src/game/g_effect.c:
     .text       start:0x02051e8c end:0x02058558
@@ -101,7 +107,7 @@ src/game/enemy/g_enemy.c:
     .text       start:0x02064b88 end:0x02065458
 
 src/system/dr_sublcdc.c:
-    .text       start:0x0206568c end:0x02065890
+    .text       start:0x0206568c end:0x02065a8c
 
 src/game/gimmick/dev_block.c:
     complete
@@ -128,3 +134,6 @@ src/game/g_quest.c:
 
 src/system/dr_sound.c:
     .text       start:0x020aa4b8 end:0x020aa8c8
+
+src/game/g_save.c:
+    .text       start:0x020abb78 end:0x020ad254
