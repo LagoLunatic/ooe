@@ -1,23 +1,27 @@
 #include "types.h"
 
+void DrFade_Init() {
+}
+
+void DrFade_Init_SetParam() {
+}
+
+void DrFade_FadeMain() {
+}
+
 void DrFade_GetParam(int r0, int r1) {
-    
 }
 
 BOOL DrFade_FadeSet(int r0, int r1, int r2, int r3, int sp00) {
-    
 }
 
-BOOL func_02027184(int r0, int r1) {
-    
+BOOL DrFade_IsFade(int r0, int r1) {
 }
 
-void func_020271c8() {
-    
+void DrFade_FadeReset() {
 }
 
-void func_02027230() {
-    
+void DrFade_FadeReset_All() {
 }
 
 BOOL DrFade_FadeSet_All(int r0, int r1, int r2, int r3) {
@@ -35,7 +39,7 @@ int DrFade_IsFade_All(int r0) {
     i = 0;
     r5 = 0;
     for (i = 0; i < 5; i++) {
-        if (!func_02027184(r0, i)) {
+        if (!DrFade_IsFade(r0, i)) {
             r5++;
         }
     }

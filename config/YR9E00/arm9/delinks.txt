@@ -89,7 +89,7 @@ src/game/g_map.c:
     .text       start:0x020398e4 end:0x0203ae70
 
 src/game/g_cmn.c:
-    .text       start:0x0203b258 end:0x0203ce90
+    .text       start:0x0203b200 end:0x0203ce90
 
 src/game/player/g_player.c:
     .text       start:0x02049708 end:0x02051dbc
@@ -114,7 +114,7 @@ src/game/gimmick/dev_block.c:
     .text       start:0x02065a8c end:0x02065a94
 
 src/game/rune/g_rune.c:
-    .text       start:0x0206a748 end:0x0206fd54
+    .text       start:0x0206a694 end:0x0206fd54
     .data       start:0x020f3b7c end:0x020f3b84
 
 src/game/rune/g_rune_arm.c:
