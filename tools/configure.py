@@ -9,10 +9,10 @@ import sys
 import ninja_syntax
 
 # Game versions
-DEFAULT_VERSION = 0
+DEFAULT_VERSION = 1
 VERSIONS = [
-    "YR9E00",
     "YR9J00",
+    "YR9E00",
     "YR9K00",
     "YR9P00",
 ]
