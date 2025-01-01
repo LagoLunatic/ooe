@@ -161,7 +161,7 @@ def fix_up_reference_and_symbol(from_addr, new_dest_symbol_name, overlay_indexes
     func = fm.getFunctionContaining(func_addr)
     # print(fm.getFunctionContaining(func_addr).getBody())
     if func is None:
-        print(func_addr, get_symbol_pointed_to_by(from_addr).getSymbolType())
+        print(func_addr, func_sym.getSymbolType())
         # Can't seem to create a function via python scripting... I'll just do it manually.
         # disassemble(func_addr)
         # clearListing(func_addr)
