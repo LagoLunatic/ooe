@@ -139,7 +139,7 @@ def main():
         # -MMD excludes all includes instead of just system includes for some reason, so use -MD instea.
         mwcc_cmd = f'{WINE} "{mwcc_path}/mwccarm.exe" {CC_FLAGS} {CC_INCLUDES} $cc_flags -d $game_version -MD -c $in -o $basedir'
         mwcc_implicit = []
-        if os.name != "nt":
+        if system != "windows":
             transform_dep = "tools/transform_dep.py"
             mwcc_cmd += f" && $python {transform_dep} $basefile.d $basefile.d"
             mwcc_implicit.append(transform_dep)
