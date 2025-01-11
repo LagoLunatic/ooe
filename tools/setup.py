@@ -13,7 +13,7 @@ root_path = tools_path.parent
 
 EXE = ""
 system = platform.system()
-if system == "Windows" or system.startswith("MSYS") or system.startswith("MINGW"):
+if system == "Windows":
     system = "windows"
     EXE = ".exe"
 elif system == "Linux":

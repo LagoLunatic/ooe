@@ -89,7 +89,7 @@ CC_INCLUDES = " ".join(f"-i {include}" for include in includes)
 EXE = ""
 WINE = ""
 system = platform.system()
-if system == "Windows" or system.startswith("MSYS") or system.startswith("MINGW"):
+if system == "Windows":
     system = "windows"
     EXE = ".exe"
 elif system == "Linux":
