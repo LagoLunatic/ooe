@@ -4,7 +4,7 @@ import io
 from pathlib import Path
 import platform
 
-DSD_VERSION = 'v0.3.1'
+DSD_VERSION = 'v0.3.2'
 
 
 tools_path = Path(__file__).parent
