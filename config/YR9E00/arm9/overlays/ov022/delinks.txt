@@ -4,3 +4,11 @@
     .data       start:0x022a6340 end:0x022b7240 kind:data align:32
     .bss        start:0x022b7240 end:0x022b73a0 kind:bss align:32
 
+src/game/enemy/enemy103.c:
+    .text       start:0x0223d4e4 end:0x0223e004
+
+src/game/gimmick/dev_candle.c:
+    .text       start:0x02298578 end:0x02298ae0
+
+src/game/gimmick/dev_rat.c:
+    .text       start:0x0229b7f8 end:0x0229bbd4
