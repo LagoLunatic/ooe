@@ -11,13 +11,17 @@ from ghidra_utils import *
 
 import re
 
-def import_overlay_relocs_for_src_overlay(overlay_index):
-    if overlay_index is None:
-        # main ram
-        relocs_txt_path = CONFIG_DIR + "/arm9/relocs.txt"
-    else:
-        relocs_txt_path = CONFIG_DIR + "/arm9/overlays/ov%03d/relocs.txt" % overlay_index
-    addr_space = get_addr_space_by_overlay_index(overlay_index)
+def import_overlay_relocs_for_src_module(module):
+    if isinstance(module, str):
+        if module == "main":
+            relocs_txt_path = CONFIG_DIR + "/arm9/relocs.txt"
+        elif module == "itcm":
+            relocs_txt_path = CONFIG_DIR + "/arm9/itcm/relocs.txt"
+        elif module == "dtcm":
+            relocs_txt_path = CONFIG_DIR + "/arm9/dtcm/relocs.txt"
+    elif isinstance(module, int):
+        relocs_txt_path = CONFIG_DIR + "/arm9/overlays/ov%03d/relocs.txt" % module
+    addr_space = get_addr_space_by_module(module)
     
     with open(relocs_txt_path, "r") as f:
         for line in f.readlines():
@@ -43,16 +47,17 @@ def import_overlay_relocs_for_src_overlay(overlay_index):
             
             assert ref is not None
             assert from_addr == ref.getFromAddress()
-            to_addr_space = get_addr_space_by_overlay_index(to_overlay_index)
+            to_addr_space = get_addr_space_by_module(to_overlay_index)
             to_addr = to_addr_space.getAddress(ref.getToAddress().getAddressableWordOffset())
             print(from_addr, to_addr, ref.getReferenceType(), SourceType.USER_DEFINED, ref.getOperandIndex())
             rm.delete(ref)
             rm.addMemoryReference(from_addr, to_addr, ref.getReferenceType(), SourceType.USER_DEFINED, ref.getOperandIndex())
 
 def import_overlay_relocs():
-    import_overlay_relocs_for_src_overlay(None)
+    for module in ["main", "itcm", "dtcm"]:
+        import_overlay_relocs_for_src_module(module)
     for overlay_index in range(86):
-        import_overlay_relocs_for_src_overlay(overlay_index)
+        import_overlay_relocs_for_src_module(overlay_index)
 
 if __name__ == "__main__":
     import_overlay_relocs()

@@ -67,13 +67,13 @@ def set_function_signature(func_addr, signature_str):
     cmd = ApplyFunctionSignatureCmd(func_addr, sig, SourceType.USER_DEFINED)
     cmd.applyTo(currentProgram, monitor)
 
-def get_addr_space_by_overlay_index(overlay_index):
-    if overlay_index is None:
+def get_addr_space_by_module(module):
+    if isinstance(module, str):
         # main ram
         addr_space = af.getAddressSpace("ram")
-    else:
+    elif isinstance(module, int):
         # overlay
-        addr_space = af.getAddressSpace("overlay_%d" % overlay_index)
+        addr_space = af.getAddressSpace("overlay_%d" % module)
     return addr_space
 
 def read_key_val_pair_from_word(word, expected_key):

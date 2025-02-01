@@ -11,15 +11,19 @@ import re
 
 from ghidra_utils import *
 
-def export_ghidra_symbols_for_overlay(overlay_index):
-    if overlay_index is None:
-        # main ram
-        symbols_txt_path = CONFIG_DIR + "/arm9/symbols.txt"
-        dsd_auto_sym_name_prefix = ""
-    else:
-        symbols_txt_path = CONFIG_DIR + "/arm9/overlays/ov%03d/symbols.txt" % overlay_index
-        dsd_auto_sym_name_prefix = "ov%03d_" % overlay_index
-    addr_space = get_addr_space_by_overlay_index(overlay_index)
+def export_ghidra_symbols_for_module(module):
+    if isinstance(module, str):
+        dsd_auto_sym_name_prefix = "" # main ram
+        if module == "main":
+            symbols_txt_path = CONFIG_DIR + "/arm9/symbols.txt"
+        elif module == "itcm":
+            symbols_txt_path = CONFIG_DIR + "/arm9/itcm/symbols.txt"
+        elif module == "dtcm":
+            symbols_txt_path = CONFIG_DIR + "/arm9/dtcm/symbols.txt"
+    elif isinstance(module, int):
+        dsd_auto_sym_name_prefix = "ov%03d_" % module
+        symbols_txt_path = CONFIG_DIR + "/arm9/overlays/ov%03d/symbols.txt" % module
+    addr_space = get_addr_space_by_module(module)
     
     updated_symbols = []
     with open(symbols_txt_path, "r") as f:
@@ -27,7 +31,7 @@ def export_ghidra_symbols_for_overlay(overlay_index):
             sym_name, sym_kind, addr, ambiguous = read_symbols_txt_line(line, addr_space)
             
             syms = st.getSymbols(addr)
-            if len(syms) > 0:
+            if len(syms) > 0 and (len(syms) == 1 or not syms[0].name.startswith("caseD_")):
                 assert len(syms) == 1, addr
                 sym = syms[0]
                 
@@ -48,9 +52,10 @@ def export_ghidra_symbols_for_overlay(overlay_index):
             f.write(line + "\n")
 
 def export_ghidra_symbols_to_symbols_txt():
-    export_ghidra_symbols_for_overlay(None)
+    for module in ["main", "itcm", "dtcm"]:
+        export_ghidra_symbols_for_module(module)
     for overlay_index in range(86):
-        export_ghidra_symbols_for_overlay(overlay_index)
+        export_ghidra_symbols_for_module(overlay_index)
 
 if __name__ == "__main__":
     export_ghidra_symbols_to_symbols_txt()
