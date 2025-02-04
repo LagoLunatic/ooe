@@ -178,7 +178,7 @@ static void func_ov019_02203b8c(DrObj* parent, int r1, int r2, int r3, int r4) {
 }
 
 // @fabricatedName
-static void Enemy300HitAttackCallBack(DrObj* obj_this, DrObj* obj_other, int r2) {
+static void Enemy100HitAttackCallBack(DrObj* obj_this, DrObj* obj_other, int r2) {
     esEnemyHitAttackCallBack(obj_this, obj_other, r2);
 }
 
@@ -242,7 +242,7 @@ void Enemy100Init(DrObj* obj) {
         obj->vel.x = TO_FX32(-1.0f);
     }
     esParamSet(obj);
-    DrObjHit_Init(obj, 7, &Enemy300HitAttackCallBack, &Enemy100DamageCallBack);
+    DrObjHit_Init(obj, 7, &Enemy100HitAttackCallBack, &Enemy100DamageCallBack);
     DrObjHit_SetAttackParam(obj, scarecrow->m138, 0);
     esObjHitParamDamageSet(obj, scarecrow->m132);
     DrObjHit_SetDefaultInvinTimer(obj);

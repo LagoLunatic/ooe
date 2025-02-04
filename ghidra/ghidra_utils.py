@@ -76,59 +76,60 @@ def get_addr_space_by_module(module):
         addr_space = af.getAddressSpace("overlay_%d" % module)
     return addr_space
 
-def read_key_val_pair_from_word(word, expected_key):
-    key, val = word.split(":", 1)
-    assert key == expected_key
-    return val
+def read_key_val_pair_from_words(words, expected_key):
+    for word in words:
+        key, val = word.split(":", 1)
+        if key == expected_key:
+            return val
+    return None
 
-def read_key_hex_val_pair_from_word(word, expected_key):
-    val = read_key_val_pair_from_word(word, expected_key)
+def read_key_hex_val_pair_from_words(words, expected_key):
+    val = read_key_val_pair_from_words(words, expected_key)
+    if val is None:
+        return None
     hex_word = int(val, 16)
     return hex_word
 
-def read_key_addr_val_pair_from_word(word, expected_key, addr_space):
-    addr_word = read_key_hex_val_pair_from_word(word, expected_key)
+def read_key_addr_val_pair_from_words(words, expected_key, addr_space):
+    addr_word = read_key_hex_val_pair_from_words(words, expected_key)
     addr = addr_space.getAddress(addr_word)
     return addr
 
+def read_bool_from_words(words, expected_key):
+    if expected_key in words:
+        return True
+    else:
+        return False
+
 def read_symbols_txt_line(line, addr_space):
     words = line.strip().split(" ")
-    if len(words) == 4:
-        assert words[3] == "ambiguous"
-        ambiguous = True
-    elif len(words) == 3:
-        ambiguous = False
-    else:
-        raise Exception("Invalid symbols.txt line:", repr(line))
     
     sym_name = words[0]
-    sym_kind = read_key_val_pair_from_word(words[1], "kind")
-    sym_addr = read_key_addr_val_pair_from_word(words[2], "addr", addr_space)
+    words = words[1:]
     
-    return (sym_name, sym_kind, sym_addr, ambiguous)
+    sym_kind = read_key_val_pair_from_words(words, "kind")
+    sym_addr = read_key_addr_val_pair_from_words(words, "addr", addr_space)
+    ambiguous = read_bool_from_words(words, "ambiguous")
+    local = read_bool_from_words(words, "local")
+    
+    return (sym_name, sym_kind, sym_addr, ambiguous, local)
 
-def write_symbols_txt_line(sym_name, sym_kind, addr, ambiguous):
+def write_symbols_txt_line(sym_name, sym_kind, addr, ambiguous, local):
     addr_word = addr.getAddressableWordOffset()
-    sym_addr = "addr:0x%08x" % addr_word
-    
-    words = [sym_name, "kind:%s" % sym_kind, sym_addr]
+    words = [sym_name, "kind:%s" % sym_kind, "addr:0x%08x" % addr_word]
     if ambiguous:
         words.append("ambiguous")
+    if local:
+        words.append("local")
     
     return " ".join(words)
 
 def read_relocs_txt_line(line, addr_space):
     words = line.strip().split(" ")
-    if len(words) == 4:
-        addend = 0
-    elif len(words) == 5:
-        addend = read_key_hex_val_pair_from_word(words[3], "add")
-    else:
-        raise Exception("Invalid symbols.txt line:", repr(line))
+    from_addr = read_key_addr_val_pair_from_words(words, "from", addr_space)
+    kind = read_key_val_pair_from_words(words, "kind")
+    to_addr = read_key_addr_val_pair_from_words(words, "to", addr_space)
+    addend = read_key_hex_val_pair_from_words(words, "add")
+    module = read_key_val_pair_from_words(words, "module")
     
-    from_addr = read_key_addr_val_pair_from_word(words[0], "from", addr_space)
-    kind = read_key_val_pair_from_word(words[1], "kind")
-    to_addr = read_key_addr_val_pair_from_word(words[2], "to", addr_space)
-    module = read_key_val_pair_from_word(words[len(words)-1], "module")
-    
-    return (from_addr, kind, to_addr, module)
+    return (from_addr, kind, to_addr, addend, module)

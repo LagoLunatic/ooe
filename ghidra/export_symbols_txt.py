@@ -28,7 +28,7 @@ def export_ghidra_symbols_for_module(module):
     updated_symbols = []
     with open(symbols_txt_path, "r") as f:
         for line in f.readlines():
-            sym_name, sym_kind, addr, ambiguous = read_symbols_txt_line(line, addr_space)
+            sym_name, sym_kind, addr, ambiguous, local = read_symbols_txt_line(line, addr_space)
             
             syms = st.getSymbols(addr)
             if len(syms) > 0 and (len(syms) == 1 or not syms[0].name.startswith("caseD_")):
@@ -42,13 +42,13 @@ def export_ghidra_symbols_for_module(module):
                         # assert sym_name.startswith("func_" + dsd_auto_sym_name_prefix) or sym_name.startswith("data_" + dsd_auto_sym_name_prefix), sym_name
                         sym_name = ghidra_sym_name
             
-            updated_symbols.append((sym_name, sym_kind, addr, ambiguous))
+            updated_symbols.append((sym_name, sym_kind, addr, ambiguous, local))
     
     print(len(updated_symbols))
     
     with open(symbols_txt_path, "w") as f:
-        for sym_name, sym_kind, addr, ambiguous in updated_symbols:
-            line = write_symbols_txt_line(sym_name, sym_kind, addr, ambiguous)
+        for sym_name, sym_kind, addr, ambiguous, local in updated_symbols:
+            line = write_symbols_txt_line(sym_name, sym_kind, addr, ambiguous, local)
             f.write(line + "\n")
 
 def export_ghidra_symbols_to_symbols_txt():

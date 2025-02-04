@@ -26,7 +26,7 @@ def import_overlay_relocs_for_src_module(module):
     with open(relocs_txt_path, "r") as f:
         for line in f.readlines():
             # print(repr(line))
-            from_addr, kind, to_addr, module = read_relocs_txt_line(line, addr_space)
+            from_addr, kind, to_addr, addend, module = read_relocs_txt_line(line, addr_space)
             refs = get_references_at(from_addr)
             if len(refs) != 1:
                 # TODO: how to handle multiple relocations at the same from address?
