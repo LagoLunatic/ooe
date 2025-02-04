@@ -39,14 +39,22 @@ def get_member_string_for_undefined_region(undefined_member_start_str, hex_offse
     undefined_member_string = "    /* 0x" +undefined_member_start_str+" */ u8 "+member_name+";"
     return undefined_member_string
 
+def get_data_type(struct_name_or_path):
+    struct = dtm.getDataType("/" + struct_name_or_path)
+    if struct is None:
+        struct = dtm.getDataType("/_Custom/" + struct_name_or_path)
+    if struct is None:
+        struct = dtm.getDataType("/Demangler/" + struct_name_or_path)
+    return struct
+
 def export_struct_to_clipboard(struct_data_type_path):
-    struct = dtm.getDataType("/" + struct_data_type_path)
-    if struct is None:
-        struct = dtm.getDataType("/_Custom/" + struct_data_type_path)
-    if struct is None:
-        struct = dtm.getDataType("/Demangler/" + struct_data_type_path)
+    struct = get_data_type(struct_data_type_path)
     struct_name = struct.getName()
-    offset_pad_size = len("{:X}".format(struct.getLength()))
+    struct_length = struct.getLength()
+    if struct_name == "DrObjBase":
+        # For consistency with DrObj
+        struct_length = get_data_type("DrObj").getLength()
+    offset_pad_size = len("{:X}".format(struct_length))
 
     out_lines = []
     # out_lines.append("typedef struct %s %s;" % (struct_name, struct_name))
@@ -116,7 +124,10 @@ def export_struct_to_clipboard(struct_data_type_path):
         #       data_type = "int"
         #       member_name = "("+type_name+"::*"+member_name+")()"
         
-        member_string = "    /* 0x" +hex_offset_string+" */ "+str(data_type).replace(" ","")+" "+member_name+";"
+        member_string = "    /* 0x" +hex_offset_string+" */ "+str(data_type).replace(" ","")
+        if member_name != "base": # anonymous struct
+            member_string += " "+member_name
+        member_string += ";"
         out_lines.append(member_string)
 
     hex_end_offset_string = str("%0*X" % (offset_pad_size, struct.getLength()))

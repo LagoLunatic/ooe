@@ -102,6 +102,9 @@ src/game/player/g_player.c:
 src/game/g_effect.c:
     .text       start:0x02051e8c end:0x02058558
 
+src/game/enemy/es_enemy.c:
+    .text       start:0x0205b244 end:0x02061fe4
+
 src/game/item/g_item.c:
     .text       start:0x020622b8 end:0x02063f54
 

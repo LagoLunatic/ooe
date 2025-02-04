@@ -1,5 +1,4 @@
-#include "types.h"
+#include "global.h"
 
 BOOL DrSave_IsBusy() {
-    
 }

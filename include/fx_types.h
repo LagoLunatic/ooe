@@ -24,4 +24,16 @@ struct Vec2x32 {
     fx32 y;
 };
 
+extern s16 FX_SinCosTable_[0x2000];
+inline s16 FX_SinIdx(u16 r0) {
+    return FX_SinCosTable_[((r0 >> 4) * 2 + 0)];
+}
+inline s16 FX_CosIdx(u16 r0) {
+    return FX_SinCosTable_[(r0 >> 4) * 2 + 1];
+}
+
+fx32 FX_Sqrt(int);
+int FX_Atan2Idx(int, int);
+// TODO: typedef for rotation? should probably have "Idx" in the name
+
 #endif /* FX_TYPES_H */

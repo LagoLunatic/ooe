@@ -1,4 +1,4 @@
-#include "types.h"
+#include "global.h"
 
 void DrFade_Init() {
 }

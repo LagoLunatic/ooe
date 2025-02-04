@@ -6,6 +6,7 @@
 
 src/game/enemy/enemy100.c:
     .text       start:0x022038d4 end:0x02204410
+    .data       start:0x02223980 end:0x0222398c
 
 src/game/enemy/enemy300.c:
     complete

@@ -1,5 +1,9 @@
 #include "game/game.h"
-#include "types.h"
+#include "global.h"
+#include "system/dr_save.h"
+
+// TODO: forward declarations
+void SdInf_PlayWithLocation(int, int, int, int);
 
 void DrSound_PlayWithLocation(int soundId, Vec3x32 pos, int sp00) {
     if (DrSave_IsBusy() && (soundId & 0x40000000) != 0) {

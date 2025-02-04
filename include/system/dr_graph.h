@@ -1,7 +1,7 @@
 #ifndef DR_GRAPH_H
 #define DR_GRAPH_H
 
-#include "types.h"
+#include "global.h"
 
 typedef struct _DrGraphChara DrGraphChara;
 struct _DrGraphChara {

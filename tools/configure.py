@@ -42,6 +42,8 @@ CC_FLAGS = " ".join([
     "-gccinc",              # Interpret #include "..." and #include <...> equally
     "-nolink",              # Do not link
     "-msgstyle gcc",        # Use GCC-like messages (some IDEs will make file names clickable)
+    "-requireprotos",
+    "-w off",
 ])
 LD_FLAGS = " ".join([
     "-proc arm946e",        # Target processor
