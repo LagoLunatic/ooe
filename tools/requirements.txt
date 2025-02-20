@@ -1,2 +1,3 @@
-requests
+pre-commit
 pyperclip
+requests

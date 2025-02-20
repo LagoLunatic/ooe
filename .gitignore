@@ -11,6 +11,8 @@ objdiff.json
 /dsd.exe
 /dsd.pdb
 build.ninja
-.ninja_log
+.ninja_log*
+.ninja_lock
+/wibo
 ghidra/exports
 ghidra/*$py.class

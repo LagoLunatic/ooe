@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys
 import pyperclip
@@ -21,7 +21,8 @@ CXX_FLAGS = [
     '-nostdinc',
     '-Iinclude',
     '-Ilibs/c/include',
-    '-Ilibs/cpp/include'
+    '-Ilibs/cpp/include',
+    '-Ilibs/nds/include'
 ]
 
 script_dir = Path(os.path.dirname(os.path.realpath(__file__)))
@@ -37,8 +38,8 @@ COMMENT_REGEX = r'\/\/.*$|\/\*(?:.|\r|\n)+?\*\/'
 
 with open(args.file, 'r') as f:
     contents = f.read()
-contents = re.sub(COMMENT_REGEX, '', contents, 0, re.MULTILINE)
-includes = re.findall(INCLUDE_REGEX, contents, re.MULTILINE)
+contents = re.sub(COMMENT_REGEX, '', contents, count=0, flags=re.MULTILINE)
+includes = re.findall(INCLUDE_REGEX, contents, flags=re.MULTILINE)
 
 _, suffix = os.path.splitext(args.file)
 

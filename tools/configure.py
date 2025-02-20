@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 import os
 from pathlib import Path
@@ -18,7 +18,7 @@ VERSIONS = [
 ]
 
 parser = argparse.ArgumentParser(description="Generates build.ninja")
-parser.add_argument('-w', type=str, default="wine", dest="wine", required=False, help="Path to Wine (linux only)")
+parser.add_argument('-w', type=str, default="./wibo", dest="wine", required=False, help="Path to Wine/Wibo (linux only)")
 parser.add_argument('-v', '--version', help='Game version', choices=VERSIONS, default=VERSIONS[DEFAULT_VERSION])
 args = parser.parse_args()
 
@@ -34,7 +34,8 @@ CC_FLAGS = " ".join([
     "-proc arm946e",        # Target processor
     "-gccext,on",           # Enable GCC extensions
     "-fp soft",             # Compute float operations in software
-    "-inline on,noauto",    # Inline only functions marked with 'inline'
+    "-inline noauto",       # Inline only functions marked with 'inline'
+    "-lang=c",              # Set language to C
     "-Cpp_exceptions off",  # Disable C++ exceptions
     "-RTTI off",            # Disable runtime type information
     "-interworking",        # Enable ARM/Thumb interworking
@@ -57,7 +58,7 @@ LD_FLAGS = " ".join([
 DSD_OBJDIFF_ARGS = " ".join([
     "--scratch",                        # Metadata for creating decomp.me scratches
     f"--compiler {DECOMP_ME_COMPILER}", # decomp.me compiler name
-    f'--c-flags "{CC_FLAGS}"',          # decomp.me compiler flags
+    f'--c-flags "{CC_FLAGS} -lang=c"',  # decomp.me compiler flags
     "--custom-make ninja",              # Command for rebuilding files
 ])
 
@@ -138,7 +139,7 @@ def main():
         )
         n.newline()
 
-        # -MMD excludes all includes instead of just system includes for some reason, so use -MD instea.
+        # -MMD excludes all includes instead of just system includes for some reason, so use -MD instead.
         mwcc_cmd = f'{WINE} "{mwcc_path}/mwccarm.exe" {CC_FLAGS} {CC_INCLUDES} $cc_flags -d $game_version -MD -c $in -o $basedir'
         mwcc_implicit = []
         if system != "windows":
@@ -175,7 +176,7 @@ def main():
             command="./dsd rom build --config $in --rom $out $arm7_bios_flag"
         )
         n.newline()
-        
+
         n.rule(
             name="objdiff",
             command=f"./dsd objdiff --config-path $config_path {DSD_OBJDIFF_ARGS}"
@@ -185,6 +186,12 @@ def main():
         n.rule(
             name="m2ctx",
             command=f"{PYTHON} tools/m2ctx.py -f $out $in"
+        )
+        n.newline()
+
+        n.rule(
+            name="sha1",
+            command=f"{PYTHON} tools/sha1.py $in -c $sha1_file"
         )
         n.newline()
 
@@ -258,6 +265,17 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, game_build: Path, game_confi
     )
     n.newline()
 
+    # TODO: Uncomment once ds-rom supports building this game properly
+    # n.build(
+    #     inputs=rom_file,
+    #     rule="sha1",
+    #     variables={
+    #         "sha1_file": game_config / "build.sha1"
+    #     },
+    #     outputs="sha1",
+    # )
+    # n.newline()
+
 
 def add_mwcc_builds(n: ninja_syntax.Writer, game_version: str, game_build: Path, mwcc_implicit: list[Path]):
     for source_file in get_c_cpp_files([src_path, libs_path]):
@@ -278,7 +296,7 @@ def add_mwcc_builds(n: ninja_syntax.Writer, game_version: str, game_build: Path,
             implicit=mwcc_implicit,
         )
         n.newline()
-        
+
         extension = source_file.suffix
         ctx_file = str(game_build / source_file.with_suffix(f".ctx{extension}"))
         n.build(
