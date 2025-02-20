@@ -42,7 +42,7 @@ includes = re.findall(INCLUDE_REGEX, contents, re.MULTILINE)
 
 _, suffix = os.path.splitext(args.file)
 
-with tempfile.NamedTemporaryFile(delete=True, delete_on_close=False, suffix=suffix) as tmp_file:
+with tempfile.NamedTemporaryFile(delete=True, suffix=suffix) as tmp_file:
     # Write includes
     for include in includes:
         tmp_file.write(f'#include {include}\n'.encode())

@@ -17,7 +17,7 @@ extern DrGraphPalette c_scare_pal;
 // @fabricatedName
 typedef struct Enemy100 Enemy100;
 struct Enemy100 {
-    /* 0x000 */ DrObjBase;
+    /* 0x000 */ DrObj base;
     /* 0x0D0 */ u32 m0D0;
     /* 0x0D4 */ u32 m0D4;
     /* 0x0D8 */ u8 m0D8[0x0DC - 0x0D8];
@@ -29,7 +29,7 @@ struct Enemy100 {
     /* 0x0E6 */ s16 m0E6;
     /* 0x0E8 */ int m0E8;
     /* 0x0EC */ fx32 m0EC;
-    /* 0x0F0 */ DrObj* m0F0;
+    /* 0x0F0 */ Enemy100* m0F0;
     /* 0x0F4 */ int m0F4;
     /* 0x0F8 */ u8 m0F8[0x132 - 0x0F8];
     /* 0x132 */ u8 m132;
@@ -39,120 +39,117 @@ struct Enemy100 {
     /* 0x13C */ u16 m13C;
     /* 0x13E */ u8 m13E[0x160 - 0x13E];
 };  // Size: 0x160
-STATIC_ASSERT(sizeof(Enemy100) == sizeof(DrObj));
+STATIC_ASSERT(sizeof(Enemy100) == sizeof(DrObjGeneric));
 
 u16 data_ov019_02223980[6] = {2, 0x2F, 0x30, 8, 0x30, 0x18};
 
-static void func_ov019_022038d4(DrObj* obj2) {
+static void func_ov019_022038d4(Enemy100* this) {
     /* Nonmatching */
     s32 temp;
     s64 temp2;
     u16 temp3;
     fx32 xoffs;
     fx32 yoffs;
-    Enemy100* obj = (Enemy100*)obj2;
-    Enemy100* parent = (Enemy100*)obj->m0F0;
-    if (parent->state1 == 4) {
-        DrObj_ObjClearWork(obj2);
+    Enemy100* parent = this->m0F0;
+    if (parent->base.state1 == 4) {
+        DrObj_ObjClearWork(super);
         return;
     }
-    obj->opacity = parent->opacity;
-    if (parent->state1 == 1) {
+    super->opacity = parent->base.opacity;
+    if (parent->base.state1 == 1) {
         return;
     }
-    if ((parent->m074 & 0x80) != (obj->m074 & 0x80)) {
-        obj->m0F4 = 0x10000 - obj->m0F4;
+    if ((parent->base.m074 & 0x80) != (super->m074 & 0x80)) {
+        this->m0F4 = 0x10000 - this->m0F4;
     }
-    if ((parent->m074 & 0x80) != 0) {
-        obj->m074 |= 0x80;
-        if (obj->m0E8 > 0x8000) {
-            temp = 0x18000 - obj->m0E8;
+    if ((parent->base.m074 & 0x80) != 0) {
+        super->m074 |= 0x80;
+        if (this->m0E8 > 0x8000) {
+            temp = 0x18000 - this->m0E8;
         } else {
-            temp = 0x8000 - obj->m0E8;
+            temp = 0x8000 - this->m0E8;
         }
     } else {
-        obj->m074 &= ~0x80;
-        temp = obj->m0E8;
+        super->m074 &= ~0x80;
+        temp = this->m0E8;
     }
-    temp3 = parent->angle + temp;
-    temp2 = obj->m0EC;
-    xoffs = (FX_CosIdx(temp3) * temp2) / 0x1000;
-    obj->pos.x = parent->pos.x + xoffs;
-    yoffs = (FX_SinIdx(temp3) * temp2) / 0x1000;
-    obj->pos.y = parent->pos.y + yoffs;
 
-    switch (obj->state1) {
+    temp3 = parent->base.angle + temp;
+    temp2 = this->m0EC;
+    xoffs = (FX_CosIdx(temp3) * temp2) / 0x1000;
+    super->pos.x = parent->base.pos.x + xoffs;
+    yoffs = (FX_SinIdx(temp3) * temp2) / 0x1000;
+    super->pos.y = parent->base.pos.y + yoffs;
+
+    switch (super->state1) {
         case 0:
             if (parent->m0DE != 0) {
-                obj->state1 = 1;
-                obj->m0F4 = 0;
+                super->state1 = 1;
+                this->m0F4 = 0;
                 break;
             }
             // TODO: inline
-            if ((obj->m0E4 < 0 && (obj->m074 & 0x80) == 0 && obj->m0E2 == 0) ||
-                (obj->m0E4 > 0 && (obj->m074 & 0x80) != 0 && obj->m0E2 == 0) ||
-                (obj->m0E4 < 0 && (obj->m074 & 0x80) != 0 && obj->m0E2 == 1) ||
-                (obj->m0E4 > 0 && (obj->m074 & 0x80) == 0 && obj->m0E2 == 1))
+            if ((this->m0E4 < 0 && (super->m074 & 0x80) == 0 && this->m0E2 == 0) ||
+                (this->m0E4 > 0 && (super->m074 & 0x80) != 0 && this->m0E2 == 0) ||
+                (this->m0E4 < 0 && (super->m074 & 0x80) != 0 && this->m0E2 == 1) ||
+                (this->m0E4 > 0 && (super->m074 & 0x80) == 0 && this->m0E2 == 1))
             {
-                obj->m0F4 += (int)(0.05f * (0x2000 - obj->m0F4));
+                this->m0F4 += (int)(0.05f * (0x2000 - this->m0F4));
             } else {
-                obj->m0F4 -= (int)(0.05f * (obj->m0F4 - 0xE000));
+                this->m0F4 -= (int)(0.05f * (this->m0F4 - 0xE000));
             }
             break;
         case 1:
-            obj->state1 = 0;
+            super->state1 = 0;
             // TODO: inline
-            if ((obj->m0E4 < 0 && (obj->m074 & 0x80) == 0) ||
-                (obj->m0E4 > 0 && (obj->m074 & 0x80) != 0))
+            if ((this->m0E4 < 0 && (super->m074 & 0x80) == 0) ||
+                (this->m0E4 > 0 && (super->m074 & 0x80) != 0))
             {
-                obj->m0F4 = 0;
+                this->m0F4 = 0;
             } else {
-                obj->m0F4 = 0x10000;
+                this->m0F4 = 0x10000;
             }
-            if (obj->m0E0 != 0) {
+            if (this->m0E0 != 0) {
                 if ((DrMath_GetRand() & 3) != 0) {
-                    if (obj->m0E2 != 0) {
-                        obj->m0E2 = 0;
+                    if (this->m0E2 != 0) {
+                        this->m0E2 = 0;
                     } else {
-                        obj->m0E2 = 1;
+                        this->m0E2 = 1;
                     }
                 }
-                if (obj->m0E2 != 0) {
-                    if (obj->m0F4 == 0) {
-                        obj->m0F4 = 0x10000;
+                if (this->m0E2 != 0) {
+                    if (this->m0F4 == 0) {
+                        this->m0F4 = 0x10000;
                     } else {
-                        obj->m0F4 = 0;
+                        this->m0F4 = 0;
                     }
                 }
             }
             break;
     }
-    obj->angle = obj->m0F4;
+    super->angle = this->m0F4;
 }
 
-static void func_ov019_02203b8c(DrObj* parent, int r1, int r2, int r3, int r4) {
-    DrObj* objtemp;
-    Enemy100* obj;
-    objtemp = DrObj_ObjGetNextWork(0x7D, 0xE8, func_ov019_022038d4);
-    if (objtemp == NULL) {
+static void func_ov019_02203b8c(Enemy100* this, int r1, int r2, int r3, int r4) {
+    Enemy100* obj = (Enemy100*)DrObj_ObjGetNextWork(0x7D, 0xE8, (DrObjFunc)func_ov019_022038d4);
+    if (obj == NULL) {
         return;
     }
-    obj = (Enemy100*)objtemp;
-    if (!gObjOpdCopy(parent, objtemp)) {
-        DrObj_ObjClearWork(objtemp);
+    if (!gObjOpdCopy(super, &obj->base)) {
+        DrObj_ObjClearWork(&obj->base);
         return;
     }
 
-    obj->drawFunc = esEnemyDraw;
+    obj->base.drawFunc = esEnemyDraw;
     obj->m0E4 = r1;
     obj->m0E6 = r2;
-    obj->patternIdx = r4;
-    obj->m0F0 = parent;
+    obj->base.patternIdx = r4;
+    obj->m0F0 = this;
     obj->m0EC = FX_Sqrt(TO_FX32(r1 * r1 + r2 * r2));
     obj->m0E8 = FX_Atan2Idx(r2, r1);
-    obj->m074 |= 0x04;
-    obj->angle = 0;
-    obj->pos.z = parent->pos.z + r3;
+    obj->base.m074 |= 0x04;
+    obj->base.angle = 0;
+    obj->base.pos.z = super->pos.z + r3;
 
     if (r4 == 3 || r4 == 4) {
         obj->m0E0 = 1;
@@ -160,98 +157,104 @@ static void func_ov019_02203b8c(DrObj* parent, int r1, int r2, int r3, int r4) {
         obj->m0E0 = 0;
     }
 
-    if (parent->m074 & 0x20) {
-        obj->m074 |= 0x20;
-        obj->m08A = parent->m08A;
+    if (super->m074 & 0x20) {
+        obj->base.m074 |= 0x20;
+        obj->base.m08A = super->m08A;
     }
 
     // TODO: inline?
-    if ((obj->m0E4 < 0 && (obj->m074 & 0x80) == 0) || (obj->m0E4 > 0 && (obj->m074 & 0x80) != 0)) {
+    if ((obj->m0E4 < 0 && (obj->base.m074 & 0x80) == 0) ||
+        (obj->m0E4 > 0 && (obj->base.m074 & 0x80) != 0))
+    {
         obj->m0F4 = 0;
     } else {
         obj->m0F4 = 0x10000;
     }
 
-    obj->m020 = GetFreeAlphaID();
-    objtemp->opacity = 0x1F;
-    func_ov019_022038d4(objtemp);
+    obj->base.m020 = GetFreeAlphaID();
+    obj->base.opacity = 0x1F;
+    func_ov019_022038d4(obj);
 }
 
 // @fabricatedName
-static void Enemy100HitAttackCallBack(DrObj* obj_this, DrObj* obj_other, int r2) {
-    esEnemyHitAttackCallBack(obj_this, obj_other, r2);
+static void Enemy100HitAttackCallBack(DrObj* base, DrObj* other, int r2) {
+    Enemy100* this = (Enemy100*)base;
+    esEnemyHitAttackCallBack(super, other, r2);
 }
 
 // @fabricatedName
-static void Enemy100DamageCallBack(DrObj* obj_this, DrObj* obj_other, int r2) {
-    Enemy100* scarecrow = (Enemy100*)obj_this;
-    if (esEnemyDamageCallBackSub(obj_this, obj_other, r2)) {
-        esEnemyDeadSub(obj_this);
-        obj_this->state1 = 1;
-        scarecrow->m0D0 = 0;
+static void Enemy100DamageCallBack(DrObj* base, DrObj* other, int r2) {
+    Enemy100* this = (Enemy100*)base;
+    if (esEnemyDamageCallBackSub(super, other, r2)) {
+        esEnemyDeadSub(super);
+        super->state1 = 1;
+        this->m0D0 = 0;
     }
 }
 
-void Enemy100Main(DrObj* obj) {
+void Enemy100Main(DrObj* base) {
     /* Nonmatching */
+
+    Enemy100* this = (Enemy100*)base;
 }
 
-void Enemy100Init(DrObj* obj) {
-    Enemy100* scarecrow = (Enemy100*)obj;
-    if (!DrSetObjOpdCmnFree(obj, p_scare_opd, &t_scare_chara, &c_scare_pal)) {
+void Enemy100Init(DrObj* base) {
+    Enemy100* this = (Enemy100*)base;
+
+    if (!DrSetObjOpdCmnFree(super, p_scare_opd, &t_scare_chara, &c_scare_pal)) {
         return;
     }
 
-    obj->drawFunc = &esEnemyDraw;
-    obj->pos.z = 0x5680;
-    obj->m018 = 0;
-    obj->vel.y = TO_FX32(-2.5f);
-    obj->m04C = 0x200;
-    esEnemyYukaOrosu(obj, &data_ov019_02223980);
-    obj->state1 = 3;
-    scarecrow->m0D0 = 0;
+    super->drawFunc = &esEnemyDraw;
+    super->pos.z = 0x5680;
+    super->m018 = 0;
+    super->vel.y = TO_FX32(-2.5f);
+    super->m04C = 0x200;
+    esEnemyYukaOrosu(super, &data_ov019_02223980);
+    super->state1 = 3;
+    this->m0D0 = 0;
 
-    if (scarecrow->m13C == 0) {
-        obj->patternIdx = 1;
-        obj->m074 |= 0x20;
-        obj->m08A = 3;
-    } else if (scarecrow->m13C == 1) {
-        obj->patternIdx = 6;
-        obj->m074 |= 0x20;
-        obj->m08A = 4;
+    if (this->m13C == 0) {
+        super->patternIdx = 1;
+        super->m074 |= 0x20;
+        super->m08A = 3;
+    } else if (this->m13C == 1) {
+        super->patternIdx = 6;
+        super->m074 |= 0x20;
+        super->m08A = 4;
     } else if ((DrMath_GetRand() & 3) == 0) {
-        obj->patternIdx = 6;
-        obj->m074 |= 0x20;
-        obj->m08A = 4;
+        super->patternIdx = 6;
+        super->m074 |= 0x20;
+        super->m08A = 4;
     } else {
-        obj->patternIdx = 1;
-        obj->m074 |= 0x20;
-        obj->m08A = 3;
+        super->patternIdx = 1;
+        super->m074 |= 0x20;
+        super->m08A = 3;
     }
 
-    obj->m020 = GetFreeAlphaID();
-    obj->opacity = 0x1F;
-    obj->m074 |= 0x4;
-    obj->angle = 0;
-    gEnmDir2Player(obj);
-    if ((obj->m074 & 0x80)) {
-        scarecrow->m0DC = 1;
-        obj->vel.x = TO_FX32(1.0f);
+    super->m020 = GetFreeAlphaID();
+    super->opacity = 0x1F;
+    super->m074 |= 0x4;
+    super->angle = 0;
+    gEnmDir2Player(super);
+    if ((super->m074 & 0x80)) {
+        this->m0DC = 1;
+        super->vel.x = TO_FX32(1.0f);
     } else {
-        scarecrow->m0DC = 0;
-        obj->vel.x = TO_FX32(-1.0f);
+        this->m0DC = 0;
+        super->vel.x = TO_FX32(-1.0f);
     }
-    esParamSet(obj);
-    DrObjHit_Init(obj, 7, &Enemy100HitAttackCallBack, &Enemy100DamageCallBack);
-    DrObjHit_SetAttackParam(obj, scarecrow->m138, 0);
-    esObjHitParamDamageSet(obj, scarecrow->m132);
-    DrObjHit_SetDefaultInvinTimer(obj);
-    gObjHit_SetHitOpd_BothBoth(obj);
-    Enemy100Main(obj);
-    if (obj->patternIdx == 1) {
-        func_ov019_02203b8c(obj, -10, -8, 100, 4);
-        func_ov019_02203b8c(obj, -12, -8, -100, 3);
-        func_ov019_02203b8c(obj, 5, -11, 100, 5);
-        func_ov019_02203b8c(obj, 3, -11, -100, 2);
+    esParamSet(super);
+    DrObjHit_Init(super, 7, &Enemy100HitAttackCallBack, &Enemy100DamageCallBack);
+    DrObjHit_SetAttackParam(super, this->m138, 0);
+    esObjHitParamDamageSet(super, this->m132);
+    DrObjHit_SetDefaultInvinTimer(super);
+    gObjHit_SetHitOpd_BothBoth(super);
+    Enemy100Main(super);
+    if (super->patternIdx == 1) {
+        func_ov019_02203b8c(this, -10, -8, 100, 4);
+        func_ov019_02203b8c(this, -12, -8, -100, 3);
+        func_ov019_02203b8c(this, 5, -11, 100, 5);
+        func_ov019_02203b8c(this, 3, -11, -100, 2);
     }
 }

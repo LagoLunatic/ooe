@@ -8,4 +8,6 @@
 #define GLUE2(a, b) GLUE(a, b)
 #define STATIC_ASSERT(cond) typedef char GLUE2(static_assertion_failed, __LINE__)[(cond) ? 1 : -1]
 
+#define super (&this->base)
+
 #endif /* GLOBAL_H */

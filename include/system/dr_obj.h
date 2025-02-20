@@ -18,8 +18,7 @@ typedef void (*DrObjFunc)(DrObj*);
 typedef void (*DrObjHitCBFunc)(DrObj*, DrObj*, int);
 
 // @fabricatedName
-typedef struct DrObjBase DrObjBase;
-struct DrObjBase {
+struct DrObj {
     /* 0x000 */ DrObjFunc mainFunc;
     /* 0x004 */ DrObjFunc drawFunc;
     /* 0x008 */ DrObjFunc destructFunc;
@@ -90,8 +89,9 @@ struct DrObjBase {
 };  // Size: 0x0D0
 
 // @fabricatedName
-struct DrObj {
-    /* 0x000 */ DrObjBase;
+typedef struct DrObjGeneric DrObjGeneric;
+struct DrObjGeneric {
+    /* 0x000 */ DrObj base;
     /* 0x0D0 */ u8 m0D0[0x160 - 0x0D0];
 };  // Size: 0x160
 
