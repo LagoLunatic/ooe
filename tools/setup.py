@@ -7,7 +7,7 @@ from pathlib import Path
 import platform
 import stat
 
-DSD_VERSION = 'v0.4.0'
+DSD_VERSION = 'v0.5.0'
 WIBO_VERSION = '0.6.16'
 
 

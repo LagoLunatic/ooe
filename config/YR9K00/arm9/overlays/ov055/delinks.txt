@@ -1,5 +1,5 @@
-    .rodata     start:0x022c4a20 end:0x022d820c kind:data align:4
-    .ctor       start:0x022d820c end:0x022d8210 kind:data align:4
+    .rodata     start:0x022c4a20 end:0x022d820c kind:rodata align:4
+    .ctor       start:0x022d820c end:0x022d8210 kind:rodata align:4
     .data       start:0x022d8220 end:0x022d8c40 kind:data align:32
     .bss        start:0x022d8c40 end:0x022d8c40 kind:bss align:32
 
