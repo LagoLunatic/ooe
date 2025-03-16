@@ -63,7 +63,7 @@ src/system/dr_math.c:
 
 src/system/dr_bghit.c:
     .text       start:0x020334b4 end:0x02034508
-    .bss        start:0x021389e6 end:0x021389e8
+    .bss        start:0x021389e4 end:0x021389e8
 
 src/system/dr_3dbg.c:
     .text       start:0x0203464c end:0x02034d78

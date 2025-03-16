@@ -265,16 +265,15 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, game_build: Path, game_confi
     )
     n.newline()
 
-    # TODO: Uncomment once ds-rom supports building this game properly
-    # n.build(
-    #     inputs=rom_file,
-    #     rule="sha1",
-    #     variables={
-    #         "sha1_file": game_config / "build.sha1"
-    #     },
-    #     outputs="sha1",
-    # )
-    # n.newline()
+    n.build(
+        inputs=rom_file,
+        rule="sha1",
+        variables={
+            "sha1_file": game_config / "build.sha1"
+        },
+        outputs="sha1",
+    )
+    n.newline()
 
 
 def add_mwcc_builds(n: ninja_syntax.Writer, game_version: str, game_build: Path, mwcc_implicit: list[Path]):
