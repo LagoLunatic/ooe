@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import sys
-import pyperclip
 import subprocess
 import os
 from pathlib import Path
@@ -82,6 +81,7 @@ if args.out_file:
         else: eprint("Use -v for more verbose error output")
         exit(1)
 if args.clipboard:
+    import pyperclip
     pyperclip.copy(ctx)
     eprint("Copied context to clipboard")
 if args.out_file is None and not args.clipboard:
