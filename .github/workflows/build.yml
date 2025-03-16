@@ -27,7 +27,9 @@ jobs:
 
     # Copy the original files to the workspace
     - name: Prepare
-      run: cp -R /orig .
+      run: |
+        cp -R /orig .
+        mv ./orig/arm7_bios.bin .
 
     # Download necessary tools
     - name: Setup
