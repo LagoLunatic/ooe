@@ -407,7 +407,7 @@ def add_progress_report_build(n: ninja_syntax.Writer, game_build: Path):
     n.build(
         outputs=report_path,
         rule="report",
-        implicit=["objdiff", "sha1"],
+        implicit=["objdiff", "check", "sha1"],
     )
     n.newline()
 
