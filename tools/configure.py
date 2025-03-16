@@ -195,6 +195,12 @@ def main():
         )
         n.newline()
 
+        n.rule(
+            name="report",
+            command=f"./objdiff-cli report generate -o $out",
+            description="REPORT",
+        )
+
         game_build = build_path / game_version
         game_extract = extract_path / game_version
 
@@ -202,6 +208,7 @@ def main():
         add_delink_and_lcf_builds(n, game_config, game_build, game_extract)
         add_mwcc_builds(n, game_version, game_build, mwcc_implicit)
         add_mwld_and_rom_builds(n, game_build, game_config, game_version)
+        add_progress_report_build(n, game_build)
 
 
 def add_extract_build(n: ninja_syntax.Writer, game_extract: Path, game_version: str):
@@ -375,6 +382,16 @@ def add_delink_and_lcf_builds(n: ninja_syntax.Writer, game_config: Path, game_bu
         inputs="objdiff.json",
         rule="phony",
         outputs="objdiff",
+    )
+    n.newline()
+
+
+def add_progress_report_build(n: ninja_syntax.Writer, game_build: Path):
+    report_path = str(game_build / "report.json")
+    n.build(
+        outputs=report_path,
+        rule="report",
+        implicit=["rom"],
     )
     n.newline()
 

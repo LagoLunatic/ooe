@@ -10,6 +10,8 @@ objdiff.json
 /dsd
 /dsd.exe
 /dsd.pdb
+/objdiff-cli
+/objdiff-cli.exe
 build.ninja
 .ninja_log*
 .ninja_lock

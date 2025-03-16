@@ -9,6 +9,7 @@ import stat
 
 DSD_VERSION = 'v0.6.0'
 WIBO_VERSION = '0.6.16'
+OBJDIFF_VERSION = 'v2.7.1'
 
 
 tools_path = Path(__file__).parent
@@ -54,3 +55,26 @@ if system == "linux":
         f.write(response.content)
     wibo_path.chmod(wibo_path.stat().st_mode | stat.S_IEXEC)
 
+
+def objdiff_cli_url(tag: str) -> str:
+    uname = platform.uname()
+    suffix = ""
+    system = uname.system.lower()
+    if system == "darwin":
+        system = "macos"
+    elif system == "windows":
+        suffix = ".exe"
+    arch = uname.machine.lower()
+    if arch == "amd64":
+        arch = "x86_64"
+
+    repo = "https://github.com/encounter/objdiff"
+    return f"{repo}/releases/download/{tag}/objdiff-cli-{system}-{arch}{suffix}"
+
+
+print('\nInstalling objdiff-cli...')
+response = requests.get(objdiff_cli_url(OBJDIFF_VERSION))
+objdiff_cli_path = root_path / f'objdiff-cli{EXE}'
+with open(objdiff_cli_path, 'wb') as f:
+    f.write(response.content)
+objdiff_cli_path.chmod(objdiff_cli_path.stat().st_mode | stat.S_IEXEC)
