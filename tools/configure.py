@@ -190,6 +190,12 @@ def main():
         n.newline()
 
         n.rule(
+            name="check",
+            command=f"./dsd check modules --config-path $config_path --fail"
+        )
+        n.newline()
+
+        n.rule(
             name="sha1",
             command=f"{PYTHON} tools/sha1.py $in -c $sha1_file"
         )
@@ -269,6 +275,16 @@ def add_mwld_and_rom_builds(n: ninja_syntax.Writer, game_build: Path, game_confi
         inputs=rom_file,
         rule="phony",
         outputs="rom",
+    )
+    n.newline()
+
+    n.build(
+        inputs=rom_file,
+        rule="check",
+        variables={
+            "config_path": game_config / "arm9" / "config.yaml",
+        },
+        outputs="check",
     )
     n.newline()
 
