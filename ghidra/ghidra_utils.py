@@ -73,7 +73,8 @@ def get_addr_space_by_module(module):
         addr_space = af.getAddressSpace("ram")
     elif isinstance(module, int):
         # overlay
-        addr_space = af.getAddressSpace("overlay_%d" % module)
+        addr_space = af.getAddressSpace("arm9_ov%03d" % module)
+    assert addr_space is not None, "Couldn't find address space for module: %s" % repr(module)
     return addr_space
 
 def read_key_val_pair_from_words(words, expected_key):

@@ -51,9 +51,9 @@ def export_struct_to_clipboard(struct_data_type_path):
     struct = get_data_type(struct_data_type_path)
     struct_name = struct.getName()
     struct_length = struct.getLength()
-    if struct_name == "DrObjBase":
-        # For consistency with DrObj
-        struct_length = get_data_type("DrObj").getLength()
+    if struct_name == "DrObj":
+        # So the offset comment lengths are consistenct with DrObjGeneric
+        struct_length = get_data_type("DrObjGeneric").getLength()
     offset_pad_size = len("{:X}".format(struct_length))
 
     out_lines = []
