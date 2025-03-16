@@ -29,10 +29,13 @@ jobs:
     - name: Prepare
       run: cp -R /orig .
 
+    # Download necessary tools
+    - name: Setup
+      run: python tools/setup.py
+
     # Build the project
     - name: Build
       run: |
-        python tools/setup.py
         python tools/configure.py --version ${{ matrix.version }}
         ninja build/${{ matrix.version }}/report.json
 
