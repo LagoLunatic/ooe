@@ -13,8 +13,7 @@ objdiff.json
 /objdiff-cli
 /objdiff-cli.exe
 build.ninja
-.ninja_log*
-.ninja_lock
+.ninja_*
 /wibo
 ghidra/exports
 ghidra/*$py.class

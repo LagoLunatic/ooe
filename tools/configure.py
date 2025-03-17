@@ -108,9 +108,6 @@ match platform.machine().lower():
         exit(1)
 
 
-PYTHON = sys.executable
-
-
 def main():
     game_version: str = args.version
     game_config = config_path / game_version
@@ -120,6 +117,11 @@ def main():
 
     with build_ninja_path.open("w") as file:
         n = ninja_syntax.Writer(file)
+
+        configure_script = Path(os.path.relpath(os.path.abspath(sys.argv[0])))
+        n.comment("The arguments passed to configure.py, for rerunning it.")
+        n.variable("configure_args", sys.argv[1:])
+        n.variable("python", f'"{sys.executable}"')
 
         if arm7_bios_path.is_file():
             n.variable("arm7_bios_flag", f"--arm7-bios {arm7_bios_path.relative_to(root_path)}")
@@ -185,36 +187,57 @@ def main():
 
         n.rule(
             name="m2ctx",
-            command=f"{PYTHON} tools/m2ctx.py -f $out $in"
+            command="$python tools/m2ctx.py -f $out $in"
         )
         n.newline()
 
         n.rule(
             name="check",
-            command=f"./dsd check modules --config-path $config_path --fail"
+            command="./dsd check modules --config-path $config_path --fail"
         )
         n.newline()
 
         n.rule(
             name="sha1",
-            command=f"{PYTHON} tools/sha1.py $in -c $sha1_file"
+            command="$python tools/sha1.py $in -c $sha1_file"
         )
         n.newline()
 
         n.rule(
             name="report",
-            command=f"./objdiff-cli report generate -o $out",
+            command="./objdiff-cli report generate -o $out",
             description="REPORT",
+        )
+
+        n.comment("Reconfigure on change")
+        n.rule(
+            name="configure",
+            command=f"$python {configure_script} $configure_args",
+            generator=True,
+            description=f"RUN {configure_script}",
         )
 
         game_build = build_path / game_version
         game_extract = extract_path / game_version
 
+        add_configure_build(n, configure_script)
         add_extract_build(n, game_extract, game_version)
         add_delink_and_lcf_builds(n, game_config, game_build, game_extract)
         add_mwcc_builds(n, game_version, game_build, mwcc_implicit)
         add_mwld_and_rom_builds(n, game_build, game_config, game_version)
         add_progress_report_build(n, game_build)
+
+
+def add_configure_build(n: ninja_syntax.Writer, configure_script: Path):
+    n.comment("Reconfigure on change")
+    n.build(
+        outputs="build.ninja",
+        rule="configure",
+        implicit=[
+            str(configure_script),
+        ],
+    )
+    n.newline()
 
 
 def add_extract_build(n: ninja_syntax.Writer, game_extract: Path, game_version: str):
@@ -407,7 +430,7 @@ def add_progress_report_build(n: ninja_syntax.Writer, game_build: Path):
     n.build(
         outputs=report_path,
         rule="report",
-        implicit=["objdiff", "check", "sha1"],
+        implicit=["build.ninja", "objdiff", "check", "sha1"],
     )
     n.newline()
 
