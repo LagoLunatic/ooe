@@ -1,4 +1,4 @@
-Castlevania: Order of Ecclesia
+Castlevania: Order of Ecclesia  
 [![Build Status]][actions] [![Progress]][progress site]
 =============
 
