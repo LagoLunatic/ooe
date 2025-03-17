@@ -1,0 +1,49 @@
+{
+  // Use Ctrl+Shift+B to run build tasks.
+  // Or "Run Build Task" in the Command Palette.
+  "version": "2.0.0",
+  "inputs": [
+    {
+        "id": "gameVersion",
+        "type": "pickString",
+        "options": [
+            "YR9E00",
+            "YR9J00",
+            "YR9K00",
+            "YR9P00",
+        ],
+        "default": "GZLE01",
+        "description": "Game version to build."
+    },
+  ],
+  "tasks": [
+    {
+      "label": "configure",
+      "type": "shell",
+      "command": "${command:python.interpreterPath} tools/configure.py --version ${input:gameVersion}",
+      "problemMatcher": [],
+    },
+    {
+      "label": "ninja",
+      "type": "shell",
+      "command": "ninja",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "dis",
+      "type": "shell",
+      "command": "./dsd",
+      "args": [
+        "dis",
+        "--config-path", "config/YR9E00/arm9/config.yaml",
+        "--asm-path", "build/YR9E00/asm",
+      ],
+      "group": {
+        "kind": "build",
+      }
+    },
+  ]
+}
