@@ -3,8 +3,6 @@
 #include "system/dr_pal.h"
 #include "system/dr_vram.h"
 
-BOOL DrObj_SetOPD(DrObj* obj, DrGraphOpd* opd, int vramIdx);
-
 BOOL DrSetObjOpdCmnFreeFlag(
     DrObj* obj, DrGraphOpd* opd, DrGraphChara* chara, DrGraphPalette* pal, int flag
 ) {

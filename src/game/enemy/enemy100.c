@@ -1,14 +1,11 @@
 #include "game/enemy/es_enemy.h"
+#include "game/g_cmn.h"
 #include "game/g_objhit.h"
 #include "game/game.h"
 #include "global.h"
 #include "system/dr_math.h"
 #include "system/dr_objhit.h"
 #include "system/dr_opd.h"
-
-// TODO: forward declarations
-u8 GetFreeAlphaID();
-BOOL gObjOpdCopy(DrObj*, DrObj*);
 
 extern DrGraphOpd* p_scare_opd;
 extern DrGraphChara t_scare_chara;

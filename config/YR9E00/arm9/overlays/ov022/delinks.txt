@@ -7,6 +7,18 @@
 src/game/enemy/enemy103.c:
     .text       start:0x0223d4e4 end:0x0223e004
 
+src/game/enemy/enemy115.c:
+    .text       start:0x022459a0 end:0x02246120
+
+src/game/enemy/enemy116.c:
+    .text       start:0x02246588 end:0x02246918
+
+src/game/enemy/enemy117.c:
+    .text       start:0x02246b3c end:0x02247708
+
+src/game/enemy/enemy118.c:
+    .text       start:0x02248400 end:0x02248c80
+
 src/game/gimmick/dev_candle.c:
     .text       start:0x02298578 end:0x02298ae0
 

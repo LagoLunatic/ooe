@@ -4,6 +4,9 @@
     .data       start:0x020d8000 end:0x020f6b40 kind:data align:32
     .bss        start:0x020f6b40 end:0x021dd280 kind:bss align:32
 
+src/system/dr_g3d.c:
+    .text       start:0x02024f40 end:0x02025708
+
 src/system/dr_draw.c:
     .text       start:0x020257ec end:0x02026f38
 
@@ -96,6 +99,9 @@ src/game/g_cmn.c:
 src/game/g_quake.c:
     .text       start:0x0203dfd4 end:0x0203e114
 
+src/game/g_map_disp.c:
+    .text       start:0x02041638 end:0x020418a8
+
 src/game/player/g_player.c:
     .text       start:0x02049708 end:0x02051dbc
 
@@ -137,8 +143,17 @@ src/system/dr_font.c:
 src/game/g_agb.c:
     .text       start:0x0209c9e4 end:0x0209de14
 
+src/game/g_guide.c:
+    .text       start:0x0209e13c end:0x0209e1ec
+
+src/root/sdinf.c:
+    .text       start:0x0209e468 end:0x0209f804
+
 src/game/rune/g_rune_lr.c:
     .text       start:0x0209f930 end:0x020a9588
+
+src/game/g_village.c:
+    .text       start:0x020a9588 end:0x020a9698
 
 src/game/g_quest.c:
     .text       start:0x020a96d0 end:0x020a9be4
@@ -149,5 +164,5 @@ src/system/dr_sound.c:
 src/game/g_save.c:
     .text       start:0x020abb78 end:0x020ad254
 
-src/game/g_village.c:
-    .text       start:0x020a9588 end:0x020a9698
+src/game/g_library.c:
+    .text       start:0x020ad7c0 end:0x020adaec

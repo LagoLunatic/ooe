@@ -4,5 +4,6 @@
 #include "global.h"
 
 BOOL DrFS_FileRead();
+void RawOpdData_Create(void*);
 
 #endif /* DR_FS_H */

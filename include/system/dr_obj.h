@@ -1,6 +1,7 @@
 #ifndef DR_OBJ_H
 #define DR_OBJ_H
 
+#include "dr_graph.h"
 #include "global.h"
 
 // @fabricatedName
@@ -99,5 +100,6 @@ void DrObjHit_Init(DrObj*, int, DrObjHitCBFunc hitAttackCB, DrObjHitCBFunc damag
 void DrObj_DummyFunc(DrObj*);
 DrObj* DrObj_ObjGetNextWork(int, int, DrObjFunc);
 void DrObj_ObjClearWork(DrObj*);
+BOOL DrObj_SetOPD(DrObj* obj, DrGraphOpd* opd, int vramIdx);
 
 #endif /* DR_OBJ_H */

@@ -1,9 +1,6 @@
 #include "system/dr_fs.h"
 #include "system/dr_heap.h"
 
-// TODO: forward decs
-void RawOpdData_Create(void*);
-
 void gPlayerRead() {
     /* Nonmatching */
     void* r7;
