@@ -20,25 +20,21 @@ Contents:
 ```shell
 python -m pip install -r tools/requirements.txt
 ```
-4. Run the setup script:
-```shell
-python tools/setup.py
-```
-5. Run the Ninja configure script:
+4. Run the Ninja configure script:
 ```shell
 python tools/configure.py
 ```
-
 To use a version other than `YR9E00` (USA), specify `--version YR9J00` (JPN), `--version YR9P00` (PAL), or `--version YR9K00` (KOR).
+
+5. Put one or more base ROMs in the [`/orig/`](/orig/) directory of this repository.
+
+Now you can run `ninja` to build a ROM for the chosen version.
 
 > [!IMPORTANT]
 > Rerun `configure.py` often to ensure that all C/C++ code gets compiled.
 
 > [!NOTE]
 > For Linux users: Wibo is used by default. If you want to use Wine instead, run `configure.py` with `-w <path/to/wine>`.
-6. Put one or more base ROMs in the [`/extract/`](/extract/README.md) directory of this repository.
-
-Now you can run `ninja` to build a ROM for the chosen version.
 
 ### Matching the base ROM
 

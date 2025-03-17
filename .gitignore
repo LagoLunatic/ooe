@@ -1,7 +1,8 @@
 build/
 .vscode/
 !.vscode/tasks.json
-orig/
+orig/*
+!orig/.gitkeep
 *.nds
 *bios.bin
 /m2ctx
