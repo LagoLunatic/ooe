@@ -1,11 +1,13 @@
 Castlevania: Order of Ecclesia  
-[![Build Status]][actions] [![Progress]][progress site]
+[![Build Status]][actions] [![Progress]][progress site] [![Discord Badge]][discord]
 =============
 
 [Build Status]: https://github.com/LagoLunatic/ooe/actions/workflows/build.yml/badge.svg
 [actions]: https://github.com/LagoLunatic/ooe/actions/workflows/build.yml
 [Progress]: https://decomp.dev/LagoLunatic/ooe.svg?mode=shield&measure=code&label=Code&category=all
 [progress site]: https://decomp.dev/LagoLunatic/ooe
+[Discord Badge]: https://img.shields.io/static/v1?message=Discord&logo=discord&labelColor=5c5c5c&color=7289DA&logoColor=white&label=%20
+[discord]: https://discord.gg/gwN6M3HQrA
 
 A work-in-progress decompilation of *Castlevania: Order of Ecclesia*.
 
