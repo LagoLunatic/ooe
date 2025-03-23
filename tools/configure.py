@@ -289,6 +289,8 @@ def main():
         add_check_builds(n, project)
         add_objdiff_builds(n, project)
 
+        n.default("report")
+
 
 def add_download_tool_builds(n: ninja_syntax.Writer):
     if args.dsd is None:
@@ -525,7 +527,7 @@ def add_check_builds(n: ninja_syntax.Writer, project: Project):
     n.newline()
 
     n.build(
-        inputs=["check_modules", "check_symbols"],
+        inputs=["check_modules", "check_symbols", "sha1"],
         rule="phony",
         outputs="check",
     )
@@ -553,7 +555,7 @@ def add_objdiff_builds(n: ninja_syntax.Writer, project: Project):
 
     n.build(
         inputs=["objdiff.json"],
-        implicit=[OBJDIFF] + project.source_object_files(),
+        implicit=[OBJDIFF, "arm9", "check"] + project.source_object_files(),
         rule="objdiff_report",
         outputs=str(project.objdiff_report()),
     )
