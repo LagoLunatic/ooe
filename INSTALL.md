@@ -30,8 +30,7 @@ To use a version other than `YR9E00` (USA), specify `--version YR9J00` (JPN), `-
 
 Now you can run `ninja` to build a ROM for the chosen version.
 
-> [!IMPORTANT]
-> Rerun `configure.py` often to ensure that all C/C++ code gets compiled.
+Running `ninja` again after making any changes to the project (e.g. source files, delinks.txt, etc) should automatically re-run `configure.py` to ensure that all code gets compiled.
 
 > [!NOTE]
 > For Linux users: Wibo is used by default. If you want to use Wine instead, run `configure.py` with `-w <path/to/wine>`.

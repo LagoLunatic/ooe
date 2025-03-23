@@ -183,6 +183,12 @@ def main():
     with build_ninja_path.open("w") as file:
         n = ninja_syntax.Writer(file)
 
+        configure_script = Path(os.path.relpath(os.path.abspath(sys.argv[0])))
+        python_lib_dir = configure_script.parent
+        n.comment("The arguments passed to configure.py, for rerunning it.")
+        n.variable("configure_args", sys.argv[1:])
+        n.variable("python", f'"{PYTHON}"')
+
         n.rule(
             name="download_tool",
             command=f'{PYTHON} tools/download_tool.py $tool $tag --path $path'
@@ -288,6 +294,7 @@ def main():
         add_mwld_and_rom_builds(n, project)
         add_check_builds(n, project)
         add_objdiff_builds(n, project)
+        add_configure_build(n, project, configure_script, python_lib_dir)
 
         n.default("report")
 
@@ -565,6 +572,28 @@ def add_objdiff_builds(n: ninja_syntax.Writer, project: Project):
         inputs=str(project.objdiff_report()),
         rule="phony",
         outputs="report",
+    )
+    n.newline()
+
+
+def add_configure_build(n: ninja_syntax.Writer, project: Project, configure_script: Path, python_lib_dir):
+    ###
+    # Regenerate on change
+    ###
+    n.comment("Reconfigure on change")
+    n.rule(
+        name="configure",
+        command=f"$python {configure_script} $configure_args",
+        generator=True,
+        description=f"RUN {configure_script}",
+    )
+    n.build(
+        outputs="build.ninja",
+        rule="configure",
+        implicit=[
+            str(configure_script),
+            str(python_lib_dir / "ninja_syntax.py"),
+        ] + project.dsd_configs(),
     )
     n.newline()
 
