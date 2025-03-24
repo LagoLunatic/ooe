@@ -18,7 +18,7 @@ def export_enemy_funcs():
     enemy_param_addr = start_symbols[0].getAddress()
     
     with open(EXPORTS_DIR + "/enemy_funcs.txt", "w") as f:
-        for i in range(0x78+1):
+        for i in range(NUM_ENEMIES):
             init_func_name = get_symbol_name_pointed_to_by(get_struct_field_addr(enemy_param_addr, dt_EnemyParam_s, "mInitFunc"))
             main_func_name = get_symbol_name_pointed_to_by(get_struct_field_addr(enemy_param_addr, dt_EnemyParam_s, "mMainFunc"))
             f.write("%s %s\n" % (init_func_name, main_func_name))
@@ -35,7 +35,7 @@ def export_dev_funcs():
     main_func_ptr_addr = main_start_symbols[0].getAddress()
     
     with open(EXPORTS_DIR + "/dev_funcs.txt", "w") as f:
-        for i in range(0x8C+1):
+        for i in range(NUM_GIMMICKS):
             init_func_name = get_symbol_name_pointed_to_by(init_func_ptr_addr)
             main_func_name = get_symbol_name_pointed_to_by(main_func_ptr_addr)
             f.write("%s %s\n" % (init_func_name, main_func_name))

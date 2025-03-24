@@ -39,10 +39,6 @@ Enemy229Init kind:function(arm,size=0x1c8) addr:0x022b978c
 Enemy229Main kind:function(arm,size=0x174) addr:0x022b9954
 data_ov030_022b9ac8 kind:data(any) addr:0x022b9ac8
 data_ov030_022b9ae0 kind:data(any) addr:0x022b9ae0
-data_ov030_022b9c08 kind:data(any) addr:0x022b9c08 ambiguous
 data_ov030_022b9c74 kind:data(any) addr:0x022b9c74 ambiguous
-data_ov030_022b9e40 kind:data(any) addr:0x022b9e40 ambiguous
-data_ov030_022b9f10 kind:data(any) addr:0x022b9f10 ambiguous
-data_ov030_022b9f90 kind:data(any) addr:0x022b9f90 ambiguous
 data_ov030_022b9fc0 kind:data(any) addr:0x022b9fc0
 data_ov030_022b9fd4 kind:data(any) addr:0x022b9fd4

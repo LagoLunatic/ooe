@@ -9,102 +9,9 @@ from __future__ import print_function
 
 from ghidra_utils import *
 
-ENEMY_IDX_TO_OVERLAY_IDX = {
-    0x16: 38, # the creature
-    0x3C: 38, # owl
-    0x41: 38, # owl knight
-    0x4E: 38, # draculina
-    0x5E: 38, # spectral sword
-    # 0x66: 36, # final knight
-    0x67: 29, # jiang shi
-    0x6C: 24, # arthroverta
-    0x6D: 30, # brachyura
-    0x6E: 26, # maneater
-    0x6F: 27, # rusalka
-    0x70: 32, # goliath
-    0x71: 33, # gravedorcus
-    0x72: 36, # albus
-    0x73: 37, # barlowe
-    0x74: 28, # wallman
-    0x75: 35, # blackmore
-    0x76: 31, # eligor
-    0x77: 25, # death
-    0x78: 34, # dracula
-}
-
-DEV_IDX_TO_OVERLAY_IDX = {
-  0x18: 71,
-  0x19: 57,
-  0x1F: 68,
-  0x23: 43,
-  0x25: 62,
-  0x27: 51,
-  0x28: 53,
-  0x2C: 41,
-  0x2D: 40,
-  0x2F: 53,
-  0x38: 46,
-  0x3A: 46,
-  0x3B: 55,
-  0x3D: 69,
-  0x40: 78,
-  0x43: 65,
-  0x44: 68,
-  0x45: 55,
-  0x47: 57,
-  0x48: 57,
-  0x49: 57,
-  0x4A: 57,
-  0x4C: 52,
-  0x4D: 42,
-  0x4E: 42,
-  0x4F: 63,
-  0x50: 76,
-  0x51: 77,
-  0x53: 72,
-  0x54: 60,
-  0x57: 72,
-  0x58: 41,
-  0x59: 66,
-  0x5A: 46,
-  0x5B: 46,
-  0x5D: 84,
-#   0x60: 42,
-  0x61: 42,
-  0x62: 42,
-  0x63: 42,
-  0x64: 42,
-  0x65: 42,
-  0x66: 78,
-  0x67: 41,
-  0x68: 41,
-  0x69: 51,
-  0x6A: 42,
-  0x6B: 53,
-  0x6C: 64,
-  0x6D: 64,
-  0x6E: 41,
-  0x6F: 59,
-  0x70: 42,
-  0x71: 62,
-  0x72: 62,
-  0x73: 42,
-  0x74: 60,
-  0x75: 60,
-  0x76: 60,
-  0x77: 42,
-  0x78: 42,
-  0x79: 60,
-  0x7A: 42,
-  0x7E: 67,
-  0x7F: 67,
-  0x85: 75,
-  0x86: 75,
-}
-
 def check_if_address_is_valid_in_space(addr_space, addr):
     # Hack because I can't find the proper way to check if an address is valid in an address space.
-    # print(addr, "%08X" % addr.getAddressableWordOffset())
+    # print(addr, "%08x" % addr.getAddressableWordOffset())
     addr_in_space = addr_space.getAddress(addr.getAddressableWordOffset())
     addr_in_space_str = addr_in_space.toString(True)
     if addr_space.getName() == "ram":
@@ -185,7 +92,7 @@ def import_enemy_funcs():
     enemy_param_addr = start_symbols[0].getAddress()
     
     with open(EXPORTS_DIR + "/enemy_funcs.txt", "r") as f:
-        for enemy_idx in range(0x78+1):
+        for enemy_idx in range(NUM_ENEMIES):
             # print("Enemy index: 0x%02X" % enemy_idx)
             
             line = f.readline()
@@ -218,7 +125,7 @@ def import_dev_funcs():
     main_func_ptr_addr = main_start_symbols[0].getAddress()
     
     with open(EXPORTS_DIR + "/dev_funcs.txt", "r") as f:
-        for dev_idx in range(0x8C+1):
+        for dev_idx in range(NUM_GIMMICKS):
             # print("Dev: 0x%02X" % dev_idx)
             
             line = f.readline()

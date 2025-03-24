@@ -29,7 +29,6 @@ data_ov024_022ba490 kind:data(any) addr:0x022ba490
 data_ov024_022ba4c8 kind:data(any) addr:0x022ba4c8
 data_ov024_022ba4d4 kind:data(any) addr:0x022ba4d4
 data_ov024_022ba4e0 kind:data(any) addr:0x022ba4e0
-data_ov024_022ba4e8 kind:data(any) addr:0x022ba4e8 ambiguous
 data_ov024_022ba640 kind:data(any) addr:0x022ba640
 data_ov024_022ba64a kind:data(any) addr:0x022ba64a
 data_ov024_022ba654 kind:data(any) addr:0x022ba654

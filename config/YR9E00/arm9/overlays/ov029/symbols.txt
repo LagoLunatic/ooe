@@ -48,8 +48,6 @@ func_ov029_022b9ccc kind:function(arm,size=0x174) addr:0x022b9ccc
 Enemy226Init kind:function(arm,size=0x150) addr:0x022b9e40
 Enemy226Main kind:function(arm,size=0xf4) addr:0x022b9f90
 data_ov029_022ba084 kind:data(any) addr:0x022ba084
-data_ov029_022ba0a0 kind:data(any) addr:0x022ba0a0 ambiguous
-data_ov029_022ba12c kind:data(any) addr:0x022ba12c ambiguous
 data_ov029_022ba188 kind:data(any) addr:0x022ba188
 data_ov029_022ba1a0 kind:data(any) addr:0x022ba1a0
 data_ov029_022ba1a6 kind:data(any) addr:0x022ba1a6

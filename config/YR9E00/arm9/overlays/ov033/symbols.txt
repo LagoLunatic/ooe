@@ -37,5 +37,4 @@ Enemy236Main kind:function(arm,size=0x184) addr:0x022ba2d0
 data_ov033_022ba454 kind:data(any) addr:0x022ba454
 data_ov033_022ba46c kind:data(any) addr:0x022ba46c
 data_ov033_022ba4e0 kind:data(any) addr:0x022ba4e0 ambiguous
-data_ov033_022ba4e8 kind:data(any) addr:0x022ba4e8 ambiguous
 data_ov033_022ba700 kind:data(any) addr:0x022ba700

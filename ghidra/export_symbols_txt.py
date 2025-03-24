@@ -12,17 +12,7 @@ import re
 from ghidra_utils import *
 
 def export_ghidra_symbols_for_module(module):
-    if isinstance(module, str):
-        dsd_auto_sym_name_prefix = "" # main ram
-        if module == "main":
-            symbols_txt_path = CONFIG_DIR + "/arm9/symbols.txt"
-        elif module == "itcm":
-            symbols_txt_path = CONFIG_DIR + "/arm9/itcm/symbols.txt"
-        elif module == "dtcm":
-            symbols_txt_path = CONFIG_DIR + "/arm9/dtcm/symbols.txt"
-    elif isinstance(module, int):
-        dsd_auto_sym_name_prefix = "ov%03d_" % module
-        symbols_txt_path = CONFIG_DIR + "/arm9/overlays/ov%03d/symbols.txt" % module
+    symbols_txt_path = get_symbols_txt_path_by_module(module)
     addr_space = get_addr_space_by_module(module)
     
     updated_symbols = []
@@ -39,7 +29,6 @@ def export_ghidra_symbols_for_module(module):
                 if sym.getSource() != SourceType.DEFAULT:
                     print(sym_name, sym, sym.getSource())
                     if sym_name != ghidra_sym_name and sym_name != "Entry":
-                        # assert sym_name.startswith("func_" + dsd_auto_sym_name_prefix) or sym_name.startswith("data_" + dsd_auto_sym_name_prefix), sym_name
                         sym_name = ghidra_sym_name
             
             updated_symbols.append((sym_name, sym_kind, addr, ambiguous, local))
@@ -52,10 +41,8 @@ def export_ghidra_symbols_for_module(module):
             f.write(line + "\n")
 
 def export_ghidra_symbols_to_symbols_txt():
-    for module in ["main", "itcm", "dtcm"]:
+    for module in ALL_MODULES:
         export_ghidra_symbols_for_module(module)
-    for overlay_index in range(86):
-        export_ghidra_symbols_for_module(overlay_index)
 
 if __name__ == "__main__":
     export_ghidra_symbols_to_symbols_txt()
