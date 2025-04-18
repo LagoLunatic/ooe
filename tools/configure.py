@@ -53,7 +53,10 @@ CC_FLAGS = " ".join([
     "-gccinc",              # Interpret #include "..." and #include <...> equally
     "-nolink",              # Do not link
     "-msgstyle gcc",        # Use GCC-like messages (some IDEs will make file names clickable)
-    "-requireprotos",
+    # "-requireprotos",
+    "-D_NITRO",
+    "-D_DEBUG",
+    "-str reuse", # (for gamespy, unsure if game code uses this or not)
 ])
 LD_FLAGS = " ".join([
     "-proc arm946e",        # Target processor
@@ -89,7 +92,9 @@ mwcc_path        = mwcc_root / MWCC_VERSION
 
 # Includes
 includes = [
-    str(root_path / "include")
+    str(root_path / "include"),
+    str(root_path / "libs" / "GameSpy"),
+    str(root_path / "libs" / "GameSpy" / "common"),
 ]
 for root, dirs, _ in os.walk(libs_path):
     for dir in dirs:
@@ -461,6 +466,10 @@ def get_c_cpp_files(dirs: list[Path]):
         for root, _, files in os.walk(dir):
             root = Path(root)
             for file in files:
+                if file in ["gsPlatform.c", "gsPlatformSocket.c", "gsPlatformThread.c", "gsPlatformUtil.c", "gsDebug.c", "gsAssert.c", "gsSocketNitro.c"]:
+                    # Hack to ignore partial source files that get included into other source files.
+                    # TODO: Find a proper fix for this.
+                    continue
                 if is_cpp(file) or is_c(file):
                     yield root / file
 
