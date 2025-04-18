@@ -6,22 +6,57 @@
 
 libs/GameSpy/darray.c:
     .text       start:0x022241b0 end:0x02224954
-    .data       start:0x0228b254 end:0x0228b378
+    .data       start:0x0228b248 end:0x0228b37c
 
 libs/GameSpy/hashtable.c:
     .text       start:0x02224954 end:0x02224f00
+    .data       start:0x0228b37c end:0x0228b430
+
+libs/GameSpy/nonport.c:
+    .text       start:0x02224f00 end:0x022250a8
+    .data       start:0x0228b430 end:0x0228b484
+
+libs/GameSpy/GP/gpiBuffer.c:
+    .text       start:0x02227ddc end:0x02228394
+
+libs/GameSpy/GP/gpiConnect.c:
+    .text       start:0x02228a08 end:0x02229fe4
+
+libs/GameSpy/GP/gpiInfo.c:
+    .text       start:0x02229fe4 end:0x0222abfc
+
+libs/GameSpy/GP/gpiOperation.c:
+    .text       start:0x0222bdc8 end:0x0222c3e4
+    .data       start:0x0228c458 end:0x0228c4cc
+
+libs/GameSpy/GP/gpiPeer.c:
+    .text       start:0x0222c3e4 end:0x0222d62c
+
+libs/GameSpy/GP/gpiProfile.c:
+    .text       start:0x0222d884 end:0x0222db88
+    .data       start:0x0228c70c end:0x0228c78c
+
+libs/GameSpy/GP/gpiSearch.c:
+    .text       start:0x0222db88 end:0x0222fcb4
+
+libs/GameSpy/GP/gpiUtility.c:
+    .text       start:0x0222fee0 end:0x0223043c
+    .data       start:0x0228cd4c end:0x0228ce5c
 
 libs/GameSpy/gt2/gt2Buffer.c:
     .text       start:0x02231adc end:0x02231cfc
 
 libs/GameSpy/gt2/gt2Callback.c:
     .text       start:0x02231cfc end:0x02232614
+    .data       start:0x0228d184 end:0x0228d20c
 
 libs/GameSpy/gt2/gt2Connection.c:
+    complete
     .text       start:0x02232614 end:0x02232b30
 
 libs/GameSpy/gt2/gt2Main.c:
     .text       start:0x02232b30 end:0x02234028
+    .data       start:0x0228d248 end:0x0228d26c
 
 libs/GameSpy/gt2/gt2Message.c:
     .text       start:0x02234028 end:0x02234a84
@@ -34,9 +69,10 @@ libs/GameSpy/gt2/gt2Utility.c:
 
 libs/GameSpy/serverbrowsing/sb_server.c:
     .text       start:0x0223876c end:0x02238f50
+    .bss        start:0x02291e40 end:0x02291e44
 
 libs/GameSpy/serverbrowsing/sb_serverlist.c:
-    .text       start:0x02238f50 end:0x0223b78c
+    .text       start:0x02238f50 end:0x0223bbc4
 
 libs/GameSpy/common/gsMemory.c:
     .text       start:0x022530dc end:0x02253124

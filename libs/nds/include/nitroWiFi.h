@@ -22,6 +22,8 @@
 #define SOC_ENOBUFS 0
 #define SOC_EMSGSIZE 0
 #define SOC_EWOULDBLOCK 0
+#define SOC_EINPROGRESS 0
+#define SOC_ETIMEDOUT 0
 
 typedef struct SOInAddr {
     int addr;

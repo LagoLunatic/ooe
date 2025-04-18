@@ -315,7 +315,7 @@ func_02007630 kind:function(arm,size=0x90) addr:0x02007630
 func_020076c0 kind:function(arm,size=0x7c) addr:0x020076c0
 func_0200773c kind:function(arm,size=0x1c) addr:0x0200773c
 func_02007758 kind:function(arm,size=0x78) addr:0x02007758
-func_020077d0 kind:function(arm,size=0x10) addr:0x020077d0
+OS_IsTickAvailable kind:function(arm,size=0x10) addr:0x020077d0
 func_020077e0 kind:function(arm,size=0x68) addr:0x020077e0
 func_02007848 kind:function(arm,size=0xa0) addr:0x02007848
 func_020078e8 kind:function(arm,size=0x10) addr:0x020078e8
@@ -825,7 +825,7 @@ strlen kind:function(arm,size=0x1c) addr:0x0201b354
 func_0201b370 kind:function(arm,size=0xc8) addr:0x0201b370
 strncpy kind:function(arm,size=0x50) addr:0x0201b438
 func_0201b488 kind:function(arm,size=0x30) addr:0x0201b488
-func_0201b4b8 kind:function(arm,size=0x114) addr:0x0201b4b8
+strcmp kind:function(arm,size=0x114) addr:0x0201b4b8
 func_0201b5cc kind:function(arm,size=0x34) addr:0x0201b5cc
 strchr kind:function(arm,size=0x3c) addr:0x0201b600
 func_0201b63c kind:function(arm,size=0x6c) addr:0x0201b63c
@@ -879,7 +879,7 @@ func_02021dcc kind:function(arm,size=0x70) addr:0x02021dcc
 func_02021e3c kind:function(arm,size=0x2c) addr:0x02021e3c
 func_02021e68 kind:function(arm,size=0x18) addr:0x02021e68
 func_02021e80 kind:function(arm,size=0x68) addr:0x02021e80
-func_02021ee8 kind:function(arm,size=0xc) addr:0x02021ee8
+strcasecmp kind:function(arm,size=0xc) addr:0x02021ee8
 func_02021ef4 kind:function(arm,size=0x318) addr:0x02021ef4
 func_0202220c kind:function(arm,size=0x104) addr:0x0202220c
 func_02022310 kind:function(arm,size=0x8c) addr:0x02022310
@@ -911,7 +911,7 @@ func_02023e00 kind:function(arm,size=0xc) addr:0x02023e00
 func_02023e0c kind:function(arm,size=0x3c) addr:0x02023e0c
 func_02023e48 kind:function(arm,size=0x20) addr:0x02023e48
 _s32_div_f kind:function(arm,size=0x20c) addr:0x02023e68
-func_02024074 kind:function(arm,size=0x1e4) addr:0x02024074
+_u32_div_f kind:function(arm,size=0x1e4) addr:0x02024074
 .L_0202407c kind:label(arm) addr:0x0202407c
 func_02024270 kind:function(arm,size=0x544) addr:0x02024270
 .L_020243a8 kind:data(byte[256]) addr:0x020243a8
@@ -3851,7 +3851,7 @@ data_020b54c0 kind:data(any) addr:0x020b54c0
 data_020b5500 kind:data(any) addr:0x020b5500
 data_020b550c kind:data(any) addr:0x020b550c
 data_020b5524 kind:data(any) addr:0x020b5524
-data_020b5578 kind:data(any) addr:0x020b5578
+__lower_map kind:data(any) addr:0x020b5578
 data_020b55f8 kind:data(any) addr:0x020b55f8
 data_020b5678 kind:data(any) addr:0x020b5678
 data_020b5778 kind:data(any) addr:0x020b5778
