@@ -587,10 +587,12 @@ def add_configure_build(n: ninja_syntax.Writer, project: Project, configure_scri
         generator=True,
         description=f"RUN {configure_script}",
     )
+    delink_file = str(project.arm9_delink_yaml())
     n.build(
         outputs="build.ninja",
         rule="configure",
         implicit=[
+            delink_file,
             str(configure_script),
             str(python_lib_dir / "ninja_syntax.py"),
         ] + project.dsd_configs(),
