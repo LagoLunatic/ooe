@@ -13,17 +13,29 @@ libs/GameSpy/hashtable.c:
     .data       start:0x0228b37c end:0x0228b430
 
 libs/GameSpy/nonport.c:
-    .text       start:0x02224f00 end:0x022250a8
+    .text       start:0x02224f00 end:0x0222566c
     .data       start:0x0228b430 end:0x0228b484
+    .bss        start:0x0229161c end:0x02291624
+
+libs/GameSpy/GP/gp.c:
+    .text       start:0x0222566c end:0x02226c24
+
+libs/GameSpy/GP/gpiBuddy.c:
+    .text       start:0x02226c24 end:0x02227ae0
 
 libs/GameSpy/GP/gpiBuffer.c:
-    .text       start:0x02227ddc end:0x02228394
+    .text       start:0x02227ae0 end:0x02228528
+
+libs/GameSpy/GP/gpiCallback.c:
+    .text       start:0x02228528 end:0x022289a0
 
 libs/GameSpy/GP/gpiConnect.c:
-    .text       start:0x02228a08 end:0x02229fe4
+    .text       start:0x022289a0 end:0x02229fe4
+    .data       start:0x0228bcd0 end:0x0228c100
 
 libs/GameSpy/GP/gpiInfo.c:
-    .text       start:0x02229fe4 end:0x0222abfc
+    .text       start:0x02229fe4 end:0x0222bdc8
+    .data       start:0x0228c100 end:0x0228c410
 
 libs/GameSpy/GP/gpiOperation.c:
     .text       start:0x0222bdc8 end:0x0222c3e4
@@ -33,22 +45,36 @@ libs/GameSpy/GP/gpiPeer.c:
     .text       start:0x0222c3e4 end:0x0222d62c
 
 libs/GameSpy/GP/gpiProfile.c:
-    .text       start:0x0222d884 end:0x0222db88
+    .text       start:0x0222d62c end:0x0222db88
     .data       start:0x0228c70c end:0x0228c78c
 
 libs/GameSpy/GP/gpiSearch.c:
     .text       start:0x0222db88 end:0x0222fcb4
+    .data       start:0x0228c8a0 end:0x0228c9d4
+
+// complete - but compiler-generated symbol names keep changing
+libs/GameSpy/GP/gpiTransfer.c:
+    .text       start:0x0222fcb4 end:0x0222fddc
+    .data       start:0x0228cca8 end:0x0228ccd8
+
+libs/GameSpy/GP/gpiUnique.c:
+    .text       start:0x0222fddc end:0x0222fee0
 
 libs/GameSpy/GP/gpiUtility.c:
     .text       start:0x0222fee0 end:0x0223043c
     .data       start:0x0228cd4c end:0x0228ce5c
 
+libs/GameSpy/gt2/gt2Auth.c:
+    .text       start:0x022317e8 end:0x02231adc
+    .data       start:0x0228cfb4 end:0x0228d000
+
 libs/GameSpy/gt2/gt2Buffer.c:
     .text       start:0x02231adc end:0x02231cfc
+    .data       start:0x0228d000 end:0x0228d100
 
 libs/GameSpy/gt2/gt2Callback.c:
     .text       start:0x02231cfc end:0x02232614
-    .data       start:0x0228d184 end:0x0228d20c
+    .data       start:0x0228d184 end:0x0228d230
 
 libs/GameSpy/gt2/gt2Connection.c:
     complete
@@ -56,7 +82,9 @@ libs/GameSpy/gt2/gt2Connection.c:
 
 libs/GameSpy/gt2/gt2Main.c:
     .text       start:0x02232b30 end:0x02234028
-    .data       start:0x0228d248 end:0x0228d26c
+    .data       start:0x0228d230 end:0x0228d278
+
+libs/GameSpy/gt2/gt2Filter.c:
 
 libs/GameSpy/gt2/gt2Message.c:
     .text       start:0x02234028 end:0x02234a84
@@ -65,14 +93,39 @@ libs/GameSpy/gt2/gt2Socket.c:
     .text       start:0x02234a84 end:0x022352bc
 
 libs/GameSpy/gt2/gt2Utility.c:
-    .text       start:0x022352bc end:0x0223876c
+    .text       start:0x022352bc end:0x022361f0
+    .data       start:0x0228d2c8 end:0x0228d2f8
+    .bss        start:0x02291aa4 end:0x02291ad4
+
+libs/GameSpy/qr2/qr2.c:
+    .text       start:0x022361f0 end:0x02237ba0
+    .data       start:0x0228d354 end:0x0228d69c
+
+libs/GameSpy/qr2/qr2regkeys.c:
+    .text       start:0x02237ba0 end:0x02237bc0
+    .data       start:0x0228d69c end:0x0228da94
+
+libs/GameSpy/serverbrowsing/sb_crypt.c:
+    .text       start:0x02237bc0 end:0x02237e8c
 
 libs/GameSpy/serverbrowsing/sb_server.c:
     .text       start:0x0223876c end:0x02238f50
-    .bss        start:0x02291e40 end:0x02291e44
+    .bss        start:0x02291e40 end:0x02291e4c
 
 libs/GameSpy/serverbrowsing/sb_serverlist.c:
     .text       start:0x02238f50 end:0x0223bbc4
+    .data       start:0x0228db10 end:0x0228dc4c
 
 libs/GameSpy/common/gsMemory.c:
     .text       start:0x022530dc end:0x02253124
+
+libs/GameSpy/gstats/gbucket.c:
+    .text       start:0x0223043c end:0x022309f8
+    .data       start:0x0228ce6c end:0x0228cebc
+    .bss        start:0x02291634 end:0x02291670
+
+libs/GameSpy/gstats/gstats.c:
+    .text       start:0x022309f8 end:0x022317e8
+    .rodata     start:0x02287cc4 end:0x02287dc8
+    .data       start:0x0228cebc end:0x0228cfb4
+    .bss        start:0x02291670 end:0x02291aa4
