@@ -31,6 +31,14 @@ typedef int BOOL;
 
 #include <time.h>
 
+typedef u64 OSTime;
+
+OSTime OS_GetTick();
+OSTime func_02023e00(OSTime, int, int);
+inline OSTime OS_TicksToMilliSeconds(OSTime ticks) {
+    return func_02023e00(ticks * 0x40, 0x82ea, 0);
+}
+
 // === TODO (below here are placeholders)
 
 typedef struct OSMutex {
