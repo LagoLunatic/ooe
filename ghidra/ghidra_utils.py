@@ -25,6 +25,7 @@ import re
 
 EXPORTS_DIR = os.path.dirname(__file__) + "/exports"
 CONFIG_DIR = os.path.dirname(__file__) + "/../config/YR9E00"
+OBJDIFF_CONFIG_PATH = os.path.dirname(__file__) + "/../objdiff.json"
 
 NUM_OVERLAYS = 86
 ALL_MODULES = ["main", "itcm", "dtcm"] + list(range(NUM_OVERLAYS))
@@ -144,7 +145,7 @@ def get_symbol_by_address(address):
     return symbols[0]
 
 def get_symbol_or_none_by_address(address):
-    symbols = st.getSymbols(address)
+    symbols = list(st.getSymbols(address))
     if len(symbols) == 0:
         return None
     assert len(symbols) == 1, "Multiple symbols at address %s" % address

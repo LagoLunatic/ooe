@@ -7,9 +7,9 @@
 
 from __future__ import print_function
 
-import re
-
 from ghidra_utils import *
+
+from import_objdiff_mappings import import_objdiff_mappings
 
 def export_ghidra_symbols_for_module(module):
     symbols_txt_path = get_symbols_txt_path_by_module(module)
@@ -27,13 +27,13 @@ def export_ghidra_symbols_for_module(module):
                 
                 ghidra_sym_name = sym.getName()
                 if sym.getSource() != SourceType.DEFAULT:
-                    print(sym_name, sym, sym.getSource())
                     if sym_name != ghidra_sym_name and sym_name != "Entry":
+                        print("Exporting:", sym_name, sym, sym.getSource())
                         sym_name = ghidra_sym_name
             
             updated_symbols.append((sym_name, sym_kind, addr, ambiguous, local))
     
-    print(len(updated_symbols))
+    # print(len(updated_symbols))
     
     with open(symbols_txt_path, "w") as f:
         for sym_name, sym_kind, addr, ambiguous, local in updated_symbols:
@@ -41,8 +41,10 @@ def export_ghidra_symbols_for_module(module):
             f.write(line + "\n")
 
 def export_ghidra_symbols_to_symbols_txt():
+    print("Exporting symbol names to symbols.txt...")
     for module in ALL_MODULES:
         export_ghidra_symbols_for_module(module)
 
 if __name__ == "__main__":
+    import_objdiff_mappings()
     export_ghidra_symbols_to_symbols_txt()
