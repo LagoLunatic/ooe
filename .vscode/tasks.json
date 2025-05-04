@@ -45,5 +45,18 @@
         "kind": "build",
       }
     },
+    {
+      "label": "apply",
+      "type": "shell",
+      "command": "./dsd",
+      "args": [
+        "apply",
+        "--config-path", "config/YR9E00/arm9/config.yaml",
+        "--elf-path", "build/YR9E00/arm9.o",
+      ],
+      "group": {
+        "kind": "build",
+      }
+    },
   ]
 }
