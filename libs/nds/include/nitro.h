@@ -39,18 +39,42 @@ inline OSTime OS_TicksToMilliSeconds(OSTime ticks) {
     return func_02023e00(ticks * 0x40, 0x82ea, 0);
 }
 
-// === TODO (below here are placeholders)
+void OS_TPanic(const char* format, ...);
+
+typedef int OSIntrMode;  // guess
+
+OSIntrMode OS_DisableInterrupts_IrqAndFiq();
+OS_RestoreInterrupts_IrqAndFiq(OSIntrMode);
 
 typedef struct OSMutex {
+    // TODO
 } OSMutex;
 typedef struct OSThread {
+    // TODO
 } OSThread;
 
-typedef int OSIntrMode;
+void OS_LockMutex(OSMutex*);
+void OS_UnlockMutex(OSMutex*);
+BOOL OS_TryLockMutex(OSMutex*);
+void OS_InitMutex(OSMutex*);
 
-typedef struct FILE {
-} FILE;
+void OS_CreateThread(
+    OSThread* thread, void (*func)(void*), void* arg, void* stack, unsigned int stackSize, int
+);
+
+// === TODO (below here are placeholders)
 
 #define MAC_ALEN 1
+
+BOOL OS_IsTickAvailable();
+
+OSTime OS_TicksToMicroSeconds(OSTime ticks);
+void OS_Sleep(unsigned int);
+
+OSThread* OS_GetCurrentThread();
+void OS_CheckStack(OSThread* thread);
+void OS_WakeupThreadDirect(OSThread*);
+void OS_DestroyThread(OSThread*);
+BOOL OS_IsThreadTerminated(OSThread*);
 
 #endif /* NITRO_H */

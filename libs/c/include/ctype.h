@@ -12,4 +12,6 @@ inline int toupper(int c) {
     return (c < 0 || c >= 128 ? c : (int)__upper_map[c]);
 }
 
+int isdigit(int ch);
+
 #endif /* CTYPE_H */
