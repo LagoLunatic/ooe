@@ -93,6 +93,9 @@ src/game/g_objhit.c:
 src/game/g_map.c:
     .text       start:0x020398e4 end:0x0203ae70
 
+src/game/g_extra_warp.c:
+    .text       start:0x0203afd0 end:0x0203b15c
+
 src/game/g_cmn.c:
     .text       start:0x0203b200 end:0x0203d11c
 
@@ -106,7 +109,7 @@ src/game/player/g_player.c:
     .text       start:0x02049708 end:0x02051dbc
 
 src/game/g_effect.c:
-    .text       start:0x02051e8c end:0x02058558
+    .text       start:0x02051e8c end:0x0205a610
 
 src/game/enemy/es_enemy.c:
     .text       start:0x0205b244 end:0x02061fe4
@@ -156,7 +159,7 @@ src/game/g_village.c:
     .text       start:0x020a9588 end:0x020a9698
 
 src/game/g_quest.c:
-    .text       start:0x020a96d0 end:0x020a9be4
+    .text       start:0x020a96d0 end:0x020aa4b8
 
 src/system/dr_sound.c:
     .text       start:0x020aa4b8 end:0x020aa8c8

@@ -29,3 +29,18 @@ src/game/gimmick/dev_casket.c:
 
 src/game/gimmick/dev_magnet.c:
     .text       start:0x0221b198 end:0x0221b33c
+
+src/game/gimmick/dev_kitty.c:
+    .text       start:0x0221cff0 end:0x0221d444
+
+src/game/gimmick/dev_stage_exit.c:
+    .text       start:0x0221d5f8 end:0x0221dad4
+
+src/game/gimmick/dev_toge_obj.c:
+    .text       start:0x0221dfa0 end:0x0221e3b0
+
+src/game/gimmick/dev_fire_pillar.c:
+    .text       start:0x0221e6f4 end:0x0221f498
+
+src/game/gimmick/dev_fire_ring.c:
+    .text       start:0x0221f704 end:0x0221f850
